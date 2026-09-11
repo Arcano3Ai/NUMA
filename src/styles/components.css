@@ -644,3 +644,146 @@
   }
 }
 
+/* --- BOTONES DE REDES SOCIALES CON HOVER DE MARCA OFICIAL --- */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  color: var(--color-beige);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform var(--transition-fast), fill var(--transition-fast);
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+/* TikTok */
+.social-icon-btn.social-tiktok:hover {
+  background: #010101;
+  color: #FFFFFF;
+  border-color: #25F4EE;
+  box-shadow: -2px 0 14px rgba(37, 244, 238, 0.6), 2px 0 14px rgba(254, 44, 85, 0.6);
+}
+.social-icon-btn.social-tiktok:hover svg {
+  filter: drop-shadow(-1px -1px 0 #25F4EE) drop-shadow(1px 1px 0 #FE2C55);
+}
+
+/* Instagram */
+.social-icon-btn.social-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #FFFFFF;
+  border-color: #d6249f;
+  box-shadow: 0 4px 20px rgba(214, 36, 159, 0.55), 0 0 10px rgba(253, 89, 73, 0.4);
+}
+
+/* Facebook */
+.social-icon-btn.social-facebook:hover {
+  background: #1877F2;
+  color: #FFFFFF;
+  border-color: #1877F2;
+  box-shadow: 0 4px 18px rgba(24, 119, 242, 0.55);
+}
+
+/* YouTube */
+.social-icon-btn.social-youtube:hover {
+  background: #FF0000;
+  color: #FFFFFF;
+  border-color: #FF0000;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.6);
+}
+
+/* --- SELECTOR DE IDIOMA (i18n) --- */
+.lang-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn.active {
+  background: var(--color-gold);
+  color: #0A0A0A;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.35);
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--color-gold-light);
+}
+
+/* --- INTERRUPTOR DE TEMA (CLARO / OSCURO) --- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-beige);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+  transform: rotate(15deg);
+}
+
+.theme-toggle-btn svg {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Iconos de sol y luna */
+.theme-icon-sun {
+  display: none;
+}
+.theme-icon-moon {
+  display: block;
+}
+
+[data-theme="light"] .theme-icon-sun {
+  display: block;
+}
+[data-theme="light"] .theme-icon-moon {
+  display: none;
+}
+
+

@@ -103,6 +103,15 @@
     padding: 2.25rem 1.25rem;
   }
 
+  .ritual-detail-stage {
+    padding: 1.5rem;
+    gap: 1.75rem;
+  }
+
+  .ritual-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
   .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 2rem;

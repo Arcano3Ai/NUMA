@@ -59,3 +59,45 @@
   --gradient-card-dark: linear-gradient(180deg, rgba(26, 26, 26, 0.7) 0%, rgba(14, 14, 14, 0.95) 100%);
   --gradient-dark-radial: radial-gradient(ellipse at top, #1A1A1A 0%, #0A0A0A 80%);
 }
+
+/* --- MODO CLARO BOUTIQUE (Lujo Espiritual, Alabastro & Oro Antiguo) --- */
+[data-theme="light"] {
+  --color-bg: #FAF8F5;
+  --color-bg-alt: #F2EDE4;
+  --color-bg-card: #FFFFFF;
+  --color-bg-card-hover: #F8F4EC;
+  --color-surface-glass: rgba(255, 255, 255, 0.88);
+  --color-surface-glass-heavy: rgba(250, 248, 245, 0.96);
+
+  --color-gold: #B8860B;
+  --color-gold-deep: #8F6504;
+  --color-gold-light: #9E7412;
+  --color-gold-soft: #B8860B;
+  --color-gold-muted: rgba(184, 134, 11, 0.15);
+  --color-gold-glow: rgba(184, 134, 11, 0.25);
+
+  --color-beige: #2D2824;
+  --color-beige-light: #1C1917;
+  --color-beige-muted: #665F55;
+
+  --color-text-primary: #1C1917;
+  --color-text-secondary: #4A443D;
+  --color-text-muted: #736B60;
+  --color-border: rgba(184, 134, 11, 0.22);
+  --color-border-gold: rgba(184, 134, 11, 0.38);
+  --color-border-gold-strong: rgba(184, 134, 11, 0.75);
+
+  --shadow-subtle: 0 4px 20px rgba(74, 68, 61, 0.08);
+  --shadow-gold: 0 4px 25px rgba(184, 134, 11, 0.14);
+  --shadow-gold-hover: 0 8px 30px rgba(184, 134, 11, 0.22), 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 20px 60px rgba(28, 25, 23, 0.25);
+
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8860B 50%, #8F6504 100%);
+  --gradient-gold-radial: radial-gradient(circle, rgba(184, 134, 11, 0.16) 0%, rgba(184, 134, 11, 0.03) 55%, transparent 70%);
+  --gradient-card-dark: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 241, 233, 0.95) 100%);
+  --gradient-dark-radial: radial-gradient(ellipse at top, #FFFFFF 0%, #F5EFEB 85%);
+}
+
+body {
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}

@@ -33,15 +33,15 @@
       </a>
 
       <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#inicio" class="nav-link active">INICIO</a>
-        <a href="#que-es-numa" class="nav-link">NÜMA</a>
-        <a href="#experiencias" class="nav-link">EXPERIENCIAS</a>
-        <a href="#tienda" class="nav-link">TIENDA</a>
-        <a href="#rituales" class="nav-link">RITUALES</a>
-        <a href="#numerologia" class="nav-link">NUMEROLOGÍA</a>
-        <a href="#cuencos" class="nav-link">CUENCOS</a>
-        <a href="#journal" class="nav-link">JOURNAL</a>
-        <a href="#sobre-numa" class="nav-link">NOSOTROS</a>
+        <a href="#inicio" class="nav-link active" data-i18n="nav_home">INICIO</a>
+        <a href="#que-es-numa" class="nav-link" data-i18n="nav_about">NÜMA</a>
+        <a href="#experiencias" class="nav-link" data-i18n="nav_experiences">EXPERIENCIAS</a>
+        <a href="#tienda" class="nav-link" data-i18n="nav_shop">TIENDA</a>
+        <a href="#rituales" class="nav-link" data-i18n="nav_rituals">RITUALES</a>
+        <a href="#numerologia" class="nav-link" data-i18n="nav_numerology">NUMEROLOGÍA</a>
+        <a href="#cuencos" class="nav-link" data-i18n="nav_sound">CUENCOS</a>
+        <a href="#journal" class="nav-link" data-i18n="nav_journal">JOURNAL</a>
+        <a href="#sobre-numa" class="nav-link" data-i18n="nav_contact">NOSOTROS</a>
       </nav>
 
       <div class="header-actions">
@@ -72,8 +72,32 @@
           <span class="action-count-badge cart-count-badge" style="display: none;">0</span>
         </div>
 
+        <!-- Selector de Idioma -->
+        <div class="lang-switch-wrap" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es" title="Español">ES</button>
+          <button class="lang-btn" data-lang="en" title="English">EN</button>
+        </div>
+
+        <!-- Toggle Modo Claro / Oscuro -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro / oscuro" data-i18n-title="btn_theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
         <!-- Botón Destacado Reservar -->
-        <button class="btn btn-primary btn-sm btn-gold-shimmer" data-book-service="numerologia-transpersonal">
+        <button class="btn btn-primary btn-sm btn-gold-shimmer" data-book-service="numerologia-transpersonal" data-i18n="btn_book_session">
           RESERVAR
         </button>
 
@@ -92,28 +116,56 @@
         <img src="./assets/images/numa_logo_circle.png" style="width: 38px; height: 38px; border-radius: 50%;">
         <span style="font-family: var(--font-serif-display); font-size: 1.25rem; color: var(--color-gold);">NÜMA</span>
       </div>
-      <button id="mobile-nav-close" style="font-size: 1.8rem; color: var(--color-beige);">&times;</button>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div class="lang-switch-wrap">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="theme-toggle-btn" aria-label="Cambiar tema">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle></svg>
+        </button>
+        <button id="mobile-nav-close" style="font-size: 1.8rem; color: var(--color-beige); margin-left: 0.5rem;">&times;</button>
+      </div>
     </div>
 
     <nav class="mobile-nav-links">
-      <a href="#inicio" class="mobile-nav-link">INICIO</a>
-      <a href="#que-es-numa" class="mobile-nav-link">¿QUÉ ES NÜMA?</a>
-      <a href="#experiencias" class="mobile-nav-link">EXPERIENCIAS & TERAPIAS</a>
-      <a href="#tienda" class="mobile-nav-link">TIENDA NÜMA</a>
-      <a href="#rituales" class="mobile-nav-link">RITUALES GUIADOS</a>
-      <a href="#numerologia" class="mobile-nav-link">NUMEROLOGÍA TRANS-PERSONAL</a>
-      <a href="#cuencos" class="mobile-nav-link">CUENCOS & SONIDO</a>
-      <a href="#journal" class="mobile-nav-link">JOURNAL NÜMA</a>
-      <a href="#sobre-numa" class="mobile-nav-link">SOBRE NOSOTROS</a>
-      <a href="#contacto" class="mobile-nav-link">CONTACTO</a>
+      <a href="#inicio" class="mobile-nav-link" data-i18n="nav_home">INICIO</a>
+      <a href="#que-es-numa" class="mobile-nav-link" data-i18n="nav_about">¿QUÉ ES NÜMA?</a>
+      <a href="#experiencias" class="mobile-nav-link" data-i18n="nav_experiences">EXPERIENCIAS & TERAPIAS</a>
+      <a href="#tienda" class="mobile-nav-link" data-i18n="nav_shop">TIENDA NÜMA</a>
+      <a href="#rituales" class="mobile-nav-link" data-i18n="nav_rituals">RITUALES GUIADOS</a>
+      <a href="#numerologia" class="mobile-nav-link" data-i18n="nav_numerology">NUMEROLOGÍA</a>
+      <a href="#cuencos" class="mobile-nav-link" data-i18n="nav_sound">CUENCOS & SONIDO</a>
+      <a href="#journal" class="mobile-nav-link" data-i18n="nav_journal">JOURNAL NÜMA</a>
+      <a href="#sobre-numa" class="mobile-nav-link" data-i18n="nav_contact">SOBRE NOSOTROS</a>
     </nav>
 
     <div>
-      <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;" data-book-service="numerologia-transpersonal" onclick="document.getElementById('mobile-nav-close').click();">
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: 1.25rem;" data-book-service="numerologia-transpersonal" onclick="document.getElementById('mobile-nav-close').click();" data-i18n="btn_book_session">
         RESERVAR SESIÓN
       </button>
+      
+      <!-- Fila de Redes Sociales Móvil -->
+      <div style="display: flex; justify-content: center; gap: 0.85rem; margin-bottom: 1rem;">
+        <a href="https://www.tiktok.com/@frecuencia_numa" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" aria-label="TikTok Oficial">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" aria-label="Instagram Oficial">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/frecuencianuma" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" aria-label="Facebook Oficial">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@frecuencia_numa" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-youtube" aria-label="YouTube Oficial">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+
       <div style="text-align: center; font-size: 0.78rem; color: var(--color-text-muted);">
-        Instagram: @frecuencia_numa • #FrecuenciaDelSer
+        <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); text-decoration: none;">
+          Instagram: @frecuencia_numa
+        </a> • #FrecuenciaDelSer
       </div>
     </div>
   </div>
@@ -399,26 +451,72 @@
           </p>
         </div>
 
-        <!-- Selector de Rituales -->
+        <!-- Selector de Rituales con Situación Específica -->
         <div class="rituals-selector">
-          <button class="ritual-tab-btn active" data-ritual-id="ritual-calma">RITUAL DE CALMA</button>
-          <button class="ritual-tab-btn" data-ritual-id="ritual-energia">RITUAL DE ENERGÍA</button>
-          <button class="ritual-tab-btn" data-ritual-id="ritual-intencion">RITUAL DE INTENCIÓN</button>
-          <button class="ritual-tab-btn" data-ritual-id="ritual-equilibrio">RITUAL DE EQUILIBRIO</button>
-          <button class="ritual-tab-btn" data-ritual-id="ritual-descanso">RITUAL DE DESCANSO</button>
+          <button class="ritual-tab-btn active" data-ritual-id="ritual-calma">
+            <span class="tab-label">RITUAL DE CALMA</span>
+            <span class="tab-situation">Estrés & Sobrecarga</span>
+          </button>
+          <button class="ritual-tab-btn" data-ritual-id="ritual-energia">
+            <span class="tab-label">RITUAL DE ENERGÍA</span>
+            <span class="tab-situation">Apatía & Fatiga</span>
+          </button>
+          <button class="ritual-tab-btn" data-ritual-id="ritual-intencion">
+            <span class="tab-label">RITUAL DE INTENCIÓN</span>
+            <span class="tab-situation">Nuevos Ciclos</span>
+          </button>
+          <button class="ritual-tab-btn" data-ritual-id="ritual-equilibrio">
+            <span class="tab-label">RITUAL DE EQUILIBRIO</span>
+            <span class="tab-situation">Arraigo & Centro</span>
+          </button>
+          <button class="ritual-tab-btn" data-ritual-id="ritual-descanso">
+            <span class="tab-label">RITUAL DE DESCANSO</span>
+            <span class="tab-situation">Insomnio & Rendición</span>
+          </button>
         </div>
 
         <!-- Escenario Interactivo del Ritual -->
         <div class="ritual-detail-stage">
-          <div>
-            <span class="eyebrow" id="ritual-display-intention">Paz profunda y descompresión del sistema nervioso</span>
-            <h3 style="font-family: var(--font-serif-display); font-size: 2rem; color: var(--color-beige-light); margin-bottom: 0.5rem;" id="ritual-display-title">
+          <!-- Columna Izquierda: Situación, Intención y Elementos -->
+          <div class="ritual-detail-col-left">
+            <div class="ritual-situation-pill">
+              <span class="situation-pill-icon">✦ SITUACIÓN ESPECÍFICA:</span>
+              <span id="ritual-display-situation-badge">Estrés & Sobrecarga Mental</span>
+            </div>
+
+            <span class="eyebrow" id="ritual-display-intention" style="margin-top: 0.75rem; display: block;">Paz profunda y descompresión del sistema nervioso</span>
+            <h3 style="font-family: var(--font-serif-display); font-size: 2.1rem; color: var(--color-beige-light); margin-bottom: 0.5rem;" id="ritual-display-title">
               Ritual de Calma
             </h3>
-            <p class="font-editorial" style="font-size: 1.15rem; color: var(--color-gold-light); margin-bottom: 1.75rem;" id="ritual-display-subtitle">
+            <p class="font-editorial" style="font-size: 1.15rem; color: var(--color-gold-light); margin-bottom: 1.5rem;" id="ritual-display-subtitle">
               Disolver el ruido del mundo para escuchar tu verdad interior.
             </p>
 
+            <!-- Bloque de Diagnóstico Situacional -->
+            <div class="ritual-situation-box">
+              <div class="ritual-situation-desc-row">
+                <span class="situation-label">Indicado para:</span>
+                <p id="ritual-display-situation" class="situation-text">
+                  Diseñado específicamente para días de alta exigencia, fatiga sensorial, agobio laboral, ansiedad o cuando el ruido exterior satura tu paz interior.
+                </p>
+              </div>
+              <div class="ritual-meta-grid">
+                <div class="ritual-meta-item">
+                  <span class="meta-label">Momento Óptimo</span>
+                  <strong class="meta-val" id="ritual-display-moment">Al atardecer o tras una jornada intensa</strong>
+                </div>
+                <div class="ritual-meta-item">
+                  <span class="meta-label">Duración</span>
+                  <strong class="meta-val" id="ritual-display-duration">20 - 30 minutos</strong>
+                </div>
+                <div class="ritual-meta-item">
+                  <span class="meta-label">Frecuencia Vibracional</span>
+                  <strong class="meta-val" id="ritual-display-frequency">432 Hz — Resonancia Terrestre</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lista de Elementos Botánicos y Sonoros -->
             <div class="ritual-elements-list">
               <div class="ritual-element-pill">
                 <span style="color: var(--color-gold); font-size: 1.1rem;">🕯️</span>
@@ -460,14 +558,60 @@
             </div>
           </div>
 
-          <div style="text-align: center; padding: 2rem; background: rgba(10,10,10,0.5); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
-            <div style="font-size: 3rem; color: var(--color-gold); margin-bottom: 1.5rem; opacity: 0.8;">✦</div>
-            <blockquote class="font-editorial" style="font-size: 1.35rem; color: var(--color-beige); line-height: 1.6; margin-bottom: 1.5rem;" id="ritual-display-quote">
-              “No necesitas resolverlo todo en este instante. Solo necesitas respirar y volver a ti.”
-            </blockquote>
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--color-gold);">
-              — NÜMA FRECUENCIA DEL SER
-            </span>
+          <!-- Columna Derecha: Pasos del Ritual, Cita y Conexión Instagram -->
+          <div class="ritual-detail-col-right">
+            <!-- Protocolo Paso a Paso -->
+            <div class="ritual-protocol-card">
+              <div class="protocol-header">
+                <span class="protocol-badge">PASO A PASO</span>
+                <h4 class="protocol-title">Protocolo Sagrado del Ritual</h4>
+              </div>
+              <ol class="ritual-steps-list" id="ritual-display-steps">
+                <li>Prepara un espacio en penumbra y desconecta notificaciones digitales.</li>
+                <li>Enciende tu Vela Calma Intensa y observa la llama fija durante un minuto.</li>
+                <li>Rocía la Bruma Áurica en el aire sobre ti cerrando los ojos.</li>
+                <li>Inicia la respiración guiada 4-7-8 con el temporizador NÜMA.</li>
+                <li>Permanece en silencio percibiendo las sensaciones corporales y la ligereza del momento.</li>
+              </ol>
+            </div>
+
+            <!-- Cita Sagrada -->
+            <div class="ritual-quote-container">
+              <div style="font-size: 2.5rem; color: var(--color-gold); margin-bottom: 1rem; opacity: 0.8; line-height: 1;">✦</div>
+              <blockquote class="font-editorial" style="font-size: 1.2rem; color: var(--color-beige); line-height: 1.6; margin-bottom: 1rem;" id="ritual-display-quote">
+                “No necesitas resolverlo todo en este instante. Solo necesitas respirar y volver a ti.”
+              </blockquote>
+              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--color-gold);">
+                — NÜMA FRECUENCIA DEL SER
+              </span>
+            </div>
+
+            <!-- Módulo de Instagram Oficial en Rituales NÜMA -->
+            <div class="ritual-instagram-module">
+              <div class="ritual-ig-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ig-icon-svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>COMUNIDAD OFICIAL NÜMA</span>
+              </div>
+              <div class="ritual-ig-body">
+                <h5 class="ritual-ig-title">Sintoniza tu ritual en nuestra red</h5>
+                <p class="ritual-ig-desc">
+                  Comparte tu altar sensorial y etiquétanos para formar parte de la sintonía colectiva. Usa la etiqueta:
+                  <strong class="ritual-ig-hashtag" id="ritual-display-ig-tag">#RitualDeCalma #FrecuenciaDelSer</strong>
+                </p>
+                <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" class="ritual-ig-btn">
+                  <span>SEGUIR @frecuencia_numa EN INSTAGRAM</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -737,7 +881,7 @@
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-              <a href="https://instagram.com/frecuencia_numa" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+              <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm); transition: border-color var(--transition-fast);">
                 <span style="color: var(--color-gold); font-size: 1.25rem;">📸</span>
                 <div>
                   <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;">Instagram Oficial</strong>
@@ -819,10 +963,18 @@
             Acompañamos procesos de introspección y bienestar sensorial mediante velas de soya, aromas puros, numerología y sonoterapia.
           </p>
           <div class="footer-social-row">
-            <a href="https://instagram.com/frecuencia_numa" target="_blank" rel="noopener" class="btn-icon" title="Instagram">IG</a>
-            <a href="#" class="btn-icon" title="TikTok">TK</a>
-            <a href="#" class="btn-icon" title="Facebook">FB</a>
-            <a href="#" class="btn-icon" title="YouTube">YT</a>
+            <a href="https://www.tiktok.com/@frecuencia_numa" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" aria-label="TikTok Oficial" title="TikTok @frecuencia_numa">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" aria-label="Instagram Oficial" title="Instagram @frecuencia_numa">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/frecuencianuma" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" aria-label="Facebook Oficial" title="Facebook @frecuencianuma">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@frecuencia_numa" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-youtube" aria-label="YouTube Oficial" title="YouTube @frecuencia_numa">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -858,9 +1010,10 @@
           <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6;">
             Únete a nuestra sintonía compartiendo tus rituales en Instagram con la etiqueta:
           </p>
-          <div style="font-family: var(--font-serif-display); color: var(--color-gold); font-size: 1rem; margin-bottom: 1.5rem;">
-            #FrecuenciaDelSer
-          </div>
+          <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-serif-display); color: var(--color-gold); font-size: 1rem; margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none;">
+            <span>@frecuencia_numa • #FrecuenciaDelSer</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
           <ul class="footer-links-list">
             <li><a href="#" onclick="alert('Aviso de Privacidad: NÜMA protege tus datos personales conforme a la legislación mexicana. No compartimos información con terceros.'); return false;">Aviso de Privacidad</a></li>
             <li><a href="#" onclick="alert('Términos y Condiciones: La información y rituales ofrecidos por NÜMA tienen fines de bienestar y relajación. No sustituyen atención médica o psicológica.'); return false;">Términos y Condiciones</a></li>

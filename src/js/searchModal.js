@@ -177,6 +177,8 @@ export class SearchModal {
           this.openJournal(id);
         } else if (action === 'ritual') {
           const ritualEl = document.getElementById('rituales');
+          const targetTab = document.querySelector(`.ritual-tab-btn[data-ritual-id="${id}"]`);
+          if (targetTab) targetTab.click();
           if (ritualEl) ritualEl.scrollIntoView({ behavior: 'smooth' });
         }
       });

@@ -36,6 +36,12 @@ PRODUCTS.forEach(p => {
 assert.equal(RITUALS.length, 5, 'Deben existir exactamente los 5 rituales pedidos');
 RITUALS.forEach(r => {
   assert(r.title && r.elements.breath, `Ritual incompleto: ${r.title}`);
+  assert(r.situation && r.situation.length > 20, `El ritual ${r.title} debe tener una situación específica descriptiva`);
+  assert(r.situationBadge && r.situationBadge.length > 5, `El ritual ${r.title} debe tener un badge de situación`);
+  assert(r.idealMoment && r.idealMoment.length > 5, `El ritual ${r.title} debe tener un momento ideal especificado`);
+  assert(r.targetState && r.targetState.length > 10, `El ritual ${r.title} debe tener un estado objetivo`);
+  assert(Array.isArray(r.steps) && r.steps.length >= 4, `El ritual ${r.title} debe tener al menos 4 pasos`);
+  assert(r.instagramTag && r.instagramTag.includes('#FrecuenciaDelSer'), `El ritual ${r.title} debe incluir tag para Instagram`);
 });
 
 // 5. Experiencias
@@ -44,4 +50,36 @@ assert(EXPERIENCES.length >= 2, 'Deben incluirse Numerología y Cuencos');
 // 6. Journal
 assert(JOURNAL_POSTS.length >= 4, 'Deben existir al menos 4 reflexiones editoriales');
 
-console.log('✅ Todos los tests unitarios pasaron exitosamente.');
+// 7. Enlaces Oficiales de Instagram y Redes Sociales
+import fs from 'node:fs';
+import { TRANSLATIONS } from './src/i18n/translations.js';
+
+const indexHtmlContent = fs.readFileSync('./index.html', 'utf-8');
+const officialIgUrl = 'https://www.instagram.com/frecuencia_numa/';
+const igMatches = indexHtmlContent.split(officialIgUrl).length - 1;
+assert(igMatches >= 3, `Debe haber al menos 3 enlaces oficiales a ${officialIgUrl} en index.html (encontrados: ${igMatches})`);
+
+// 8. Verificación de Redes Sociales (TikTok, Instagram, Facebook, YouTube)
+assert(indexHtmlContent.includes('social-tiktok'), 'Debe incluir clase social-tiktok');
+assert(indexHtmlContent.includes('social-instagram'), 'Debe incluir clase social-instagram');
+assert(indexHtmlContent.includes('social-facebook'), 'Debe incluir clase social-facebook');
+assert(indexHtmlContent.includes('social-youtube'), 'Debe incluir clase social-youtube');
+assert(indexHtmlContent.includes('https://www.tiktok.com/@frecuencia_numa'), 'Enlace TikTok verificado');
+assert(indexHtmlContent.includes('https://www.facebook.com/frecuencianuma'), 'Enlace Facebook verificado');
+assert(indexHtmlContent.includes('https://www.youtube.com/@frecuencia_numa'), 'Enlace YouTube verificado');
+
+// 9. Verificación de Sistema i18n
+assert(TRANSLATIONS.es && TRANSLATIONS.en, 'Deben existir diccionarios es y en');
+const esKeys = Object.keys(TRANSLATIONS.es);
+const enKeys = Object.keys(TRANSLATIONS.en);
+assert(esKeys.length >= 30, 'El diccionario en español debe ser exhaustivo');
+assert.equal(esKeys.length, enKeys.length, `Paridad de claves i18n: ES (${esKeys.length}) vs EN (${enKeys.length})`);
+esKeys.forEach(k => {
+  assert(TRANSLATIONS.en[k], `Falta traducción en inglés para la clave: ${k}`);
+});
+
+// 10. Verificación de Soporte para Modo Claro en Variables CSS
+const variablesCss = fs.readFileSync('./src/styles/variables.css', 'utf-8');
+assert(variablesCss.includes('[data-theme="light"]'), 'variables.css debe contener el selector [data-theme="light"]');
+
+console.log('✅ Todos los tests unitarios, i18n, redes sociales y de consistencia pasaron exitosamente.');

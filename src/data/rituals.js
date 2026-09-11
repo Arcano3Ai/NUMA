@@ -2,6 +2,10 @@ export const RITUALS = [
   {
     id: 'ritual-calma',
     title: 'Ritual de Calma',
+    situationBadge: 'Estrés & Sobrecarga Mental',
+    situation: 'Diseñado específicamente para días de alta exigencia, fatiga sensorial, agobio laboral, ansiedad o cuando el ruido exterior satura tu paz interior.',
+    idealMoment: 'Al atardecer o tras una jornada intensa',
+    targetState: 'Descompresión nerviosa profunda, disolución del estrés y retorno al centro sereno.',
     subtitle: 'Disolver el ruido del mundo para escuchar tu verdad interior.',
     intention: 'Paz profunda, descompresión del sistema nervioso y retorno al centro.',
     duration: '20 - 30 minutos',
@@ -28,11 +32,16 @@ export const RITUALS = [
       'Inicia la respiración guiada 4-7-8 con el temporizador NÜMA.',
       'Permanece en silencio percibiendo las sensaciones corporales y la ligereza del momento.'
     ],
+    instagramTag: '#RitualDeCalma #FrecuenciaDelSer',
     bgClass: 'ritual-calma-bg'
   },
   {
     id: 'ritual-energia',
     title: 'Ritual de Energía & Vitalidad',
+    situationBadge: 'Apatía, Cansancio & Bloqueo Creativo',
+    situation: 'Diseñado específicamente para mañanas de baja vitalidad, pesadez corporal, bloqueo creativo, procrastinación o antes de iniciar proyectos trascendentales.',
+    idealMoment: 'Al amanecer o antes de acometer grandes desafíos',
+    targetState: 'Activación del plexo solar, enfoque lúcido, motivación y desbloqueo de energía estancada.',
     subtitle: 'Despertar el fuego creativo y renovar el flujo vital.',
     intention: 'Enfoque claro, motivación lúcida y desbloqueo de energía estancada.',
     duration: '15 minutos',
@@ -59,11 +68,16 @@ export const RITUALS = [
       'Realiza las 8 rondas de respiración triangular con ritmo constante.',
       'Escribe una intención clara en una frase breve que guíe tus acciones.'
     ],
+    instagramTag: '#RitualDeEnergia #FrecuenciaDelSer',
     bgClass: 'ritual-energia-bg'
   },
   {
     id: 'ritual-intencion',
     title: 'Ritual de Intención & Claridad',
+    situationBadge: 'Nuevos Ciclos, Proyectos & Decisiones',
+    situation: 'Diseñado específicamente para Lunas Nuevas, comienzos de año/mes, cumpleaños, transiciones de vida o cuando requieres absoluta certeza para sembrar un propósito.',
+    idealMoment: 'En las primeras horas de la mañana o en noches de Luna Nueva',
+    targetState: 'Alineación coherente entre corazón y mente, claridad de visión y manifestación consciente.',
     subtitle: 'Sembrar semillas de manifestación con consciencia y reverencia.',
     intention: 'Alineación entre pensamiento, emoción y palabra.',
     duration: '25 minutos',
@@ -90,11 +104,16 @@ export const RITUALS = [
       'Plasma en papel blanco tres agradecimientos y una sola intención nuclear.',
       'Dobla el papel y déjalo reposar cerca de la vela hasta que termine el ritual.'
     ],
+    instagramTag: '#RitualDeIntencion #FrecuenciaDelSer',
     bgClass: 'ritual-intencion-bg'
   },
   {
     id: 'ritual-equilibrio',
     title: 'Ritual de Equilibrio & Arraigo',
+    situationBadge: 'Dispersión Emocional & Pérdida de Centro',
+    situation: 'Diseñado específicamente para momentos de desarraigo, vértigo ante cambios repentinos, volatilidad emocional, indecisión o sensación de flotar sin base firme.',
+    idealMoment: 'A mitad del día o durante momentos de crisis emocional',
+    targetState: 'Enraizamiento sólido a la tierra, estabilidad emocional y templanza inquebrantable.',
     subtitle: 'Reconectar con la tierra, calmar la mente y armonizar polaridades.',
     intention: 'Estabilidad emocional, serenidad en momentos de cambio e integración.',
     duration: '20 minutos',
@@ -121,11 +140,16 @@ export const RITUALS = [
       'Ejecuta la respiración cuadrada 4x4 sintiendo absoluta firmeza interior.',
       'Agradece este momento de anclaje antes de continuar con tu día.'
     ],
+    instagramTag: '#RitualDeEquilibrio #FrecuenciaDelSer',
     bgClass: 'ritual-equilibrio-bg'
   },
   {
     id: 'ritual-descanso',
     title: 'Ritual de Descanso & Entrega Nocturna',
+    situationBadge: 'Insomnio & Hiperactividad Mental Nocturna',
+    situation: 'Diseñado específicamente para cuando la mente no para antes de dormir, rumiación de pendientes, tensión muscular acumulada, vigilia involuntaria o dificultad para soltar el control.',
+    idealMoment: '30 minutos antes de acostarse (lejos de pantallas luminosas)',
+    targetState: 'Rendición y entrega del día, sedación suave del sistema nervioso y sueño reparador profundo.',
     subtitle: 'Cerrar el ciclo del día y preparar el templo del sueño.',
     intention: 'Soltar el control, calmar la sobreactividad mental y descansar en gratitud.',
     duration: '30 minutos',
@@ -152,6 +176,7 @@ export const RITUALS = [
       'Apaga la llama con apagavelas (evita soplar para mantener la serenidad del humo).',
       'Realiza las respiraciones lentas 4-8 ya en posición de descanso.'
     ],
+    instagramTag: '#RitualDeDescanso #FrecuenciaDelSer',
     bgClass: 'ritual-descanso-bg'
   }
 ];

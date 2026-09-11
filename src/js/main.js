@@ -13,8 +13,22 @@ import { QuickViewModal } from './quickViewModal.js';
 import { JournalModal } from './journalModal.js';
 import { SearchModal } from './searchModal.js';
 import { getFullNumerologyReading } from './numerologyEngine.js';
+import { themeEngine } from './themeEngine.js';
+import { i18n } from '../i18n/i18nEngine.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Inicializar Motor de Tema (Claro/Oscuro) y Sistema i18n
+  themeEngine.init();
+  i18n.init();
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetLang = btn.dataset.lang;
+      if (targetLang) i18n.setLanguage(targetLang);
+    });
+  });
+
   // 1. Inicializar Canvas de Partículas
   initParticles('particles-canvas');
 
@@ -161,11 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const ritualTitle = document.getElementById('ritual-display-title');
   const ritualSubtitle = document.getElementById('ritual-display-subtitle');
   const ritualIntention = document.getElementById('ritual-display-intention');
+  const ritualSituationBadge = document.getElementById('ritual-display-situation-badge');
+  const ritualSituation = document.getElementById('ritual-display-situation');
+  const ritualMoment = document.getElementById('ritual-display-moment');
+  const ritualDuration = document.getElementById('ritual-display-duration');
+  const ritualFrequency = document.getElementById('ritual-display-frequency');
   const ritualCandle = document.getElementById('ritual-element-candle');
   const ritualAroma = document.getElementById('ritual-element-aroma');
   const ritualSoap = document.getElementById('ritual-element-soap');
   const ritualSound = document.getElementById('ritual-element-sound');
+  const ritualSteps = document.getElementById('ritual-display-steps');
   const ritualQuote = document.getElementById('ritual-display-quote');
+  const ritualIgTag = document.getElementById('ritual-display-ig-tag');
   const ritualStartBtn = document.getElementById('ritual-start-guide-btn');
   let currentRitual = RITUALS[0];
 
@@ -174,11 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ritualTitle) ritualTitle.textContent = ritual.title;
     if (ritualSubtitle) ritualSubtitle.textContent = ritual.subtitle;
     if (ritualIntention) ritualIntention.textContent = ritual.intention;
+    if (ritualSituationBadge) ritualSituationBadge.textContent = ritual.situationBadge || 'Situación Específica';
+    if (ritualSituation) ritualSituation.textContent = ritual.situation || '';
+    if (ritualMoment) ritualMoment.textContent = ritual.idealMoment || '';
+    if (ritualDuration) ritualDuration.textContent = ritual.duration || '';
+    if (ritualFrequency) ritualFrequency.textContent = ritual.frequency || '';
     if (ritualCandle) ritualCandle.textContent = ritual.elements.candle;
     if (ritualAroma) ritualAroma.textContent = ritual.elements.aroma;
     if (ritualSoap) ritualSoap.textContent = ritual.elements.soap;
     if (ritualSound) ritualSound.textContent = ritual.elements.sound;
     if (ritualQuote) ritualQuote.textContent = ritual.quote;
+    if (ritualIgTag) ritualIgTag.textContent = ritual.instagramTag || '#FrecuenciaDelSer';
+
+    if (ritualSteps && Array.isArray(ritual.steps)) {
+      ritualSteps.innerHTML = ritual.steps.map(step => `<li>${step}</li>`).join('');
+    }
   }
 
   ritualTabs.forEach(tab => {
