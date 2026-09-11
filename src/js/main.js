@@ -1,0 +1,306 @@
+import { PRODUCTS, CATEGORIES } from '../data/products.js';
+import { RITUALS } from '../data/rituals.js';
+import { EXPERIENCES, UPCOMING_EXPERIENCES } from '../data/experiences.js';
+import { JOURNAL_POSTS } from '../data/journal.js';
+import { store } from './state.js';
+import { initParticles } from './particles.js';
+import { initSoundPlayer } from './soundPlayer.js';
+import { BreathingRitualModal } from './breathingRitual.js';
+import { CartDrawer } from './cartDrawer.js';
+import { CheckoutModal } from './checkoutModal.js';
+import { BookingSystem } from './bookingSystem.js';
+import { QuickViewModal } from './quickViewModal.js';
+import { JournalModal } from './journalModal.js';
+import { SearchModal } from './searchModal.js';
+import { getFullNumerologyReading } from './numerologyEngine.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Inicializar Canvas de Partículas
+  initParticles('particles-canvas');
+
+  // 2. Inicializar Audio de Cuencos
+  initSoundPlayer();
+
+  // 3. Inicializar Modales
+  const breathingModal = new BreathingRitualModal();
+  let checkoutModal;
+  const cartDrawer = new CartDrawer(() => {
+    if (checkoutModal) checkoutModal.open();
+  });
+  checkoutModal = new CheckoutModal();
+  const bookingSystem = new BookingSystem();
+  const quickViewModal = new QuickViewModal(() => cartDrawer.open());
+  const journalModal = new JournalModal();
+  const searchModal = new SearchModal(
+    (prodId) => quickViewModal.open(prodId),
+    (postId) => journalModal.open(postId),
+    (ritual) => breathingModal.start(ritual)
+  );
+
+  // 4. Header Scroll Detection
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+
+  // 5. Menú Móvil
+  const mobileToggle = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileClose = document.getElementById('mobile-nav-close');
+
+  if (mobileToggle && mobileDrawer) {
+    mobileToggle.addEventListener('click', () => {
+      mobileDrawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (mobileClose && mobileDrawer) {
+    mobileClose.addEventListener('click', () => {
+      mobileDrawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileDrawer?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // 6. Renderizado de la Tienda & Filtros
+  const productsContainer = document.getElementById('products-grid');
+  const filterButtons = document.querySelectorAll('.category-filter-btn');
+  let currentCategory = 'all';
+
+  function renderProducts() {
+    if (!productsContainer) return;
+
+    const filtered = currentCategory === 'all'
+      ? PRODUCTS
+      : PRODUCTS.filter(p => p.category === currentCategory);
+
+    productsContainer.innerHTML = filtered.map(p => `
+      <div class="product-card" data-product-id="${p.id}">
+        <div class="product-image-box">
+          <img src="${p.image}" alt="${p.name}" loading="lazy">
+          ${p.badge ? `<span class="badge badge-gold product-badge-pos">${p.badge}</span>` : ''}
+          <button class="product-wishlist-btn ${store.isInWishlist(p.id) ? 'active' : ''}" data-wish-id="${p.id}" title="Favorito">
+            ♥
+          </button>
+          <div class="product-quickview-overlay">
+            <button class="btn btn-secondary btn-sm btn-quickview-trigger" data-id="${p.id}">
+              VISTA RÁPIDA
+            </button>
+          </div>
+        </div>
+        <div class="product-content">
+          <span class="product-category-label">${p.categoryLabel}</span>
+          <h3 class="product-title">${p.name}</h3>
+          <p class="product-notes">${p.tagline}</p>
+          <div class="product-bottom-row">
+            <div class="product-price-box">
+              <span class="product-price">$${p.price.toLocaleString('es-MX')} MXN</span>
+              ${p.originalPrice ? `<span class="product-price-old">$${p.originalPrice.toLocaleString('es-MX')}</span>` : ''}
+            </div>
+            <button class="btn btn-primary btn-sm btn-add-cart" data-id="${p.id}">
+              AGREGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Eventos de botones
+    productsContainer.querySelectorAll('.btn-add-cart').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const prod = PRODUCTS.find(p => p.id === btn.dataset.id);
+        if (prod) {
+          store.addToCart(prod);
+          cartDrawer.open();
+        }
+      });
+    });
+
+    productsContainer.querySelectorAll('.btn-quickview-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        quickViewModal.open(btn.dataset.id);
+      });
+    });
+
+    productsContainer.querySelectorAll('.product-wishlist-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const active = store.toggleWishlist(btn.dataset.wishId);
+        btn.classList.toggle('active', active);
+      });
+    });
+  }
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.category;
+      renderProducts();
+    });
+  });
+
+  renderProducts();
+
+  // 7. Sección de Rituales Interactivos
+  const ritualTabs = document.querySelectorAll('.ritual-tab-btn');
+  const ritualTitle = document.getElementById('ritual-display-title');
+  const ritualSubtitle = document.getElementById('ritual-display-subtitle');
+  const ritualIntention = document.getElementById('ritual-display-intention');
+  const ritualCandle = document.getElementById('ritual-element-candle');
+  const ritualAroma = document.getElementById('ritual-element-aroma');
+  const ritualSoap = document.getElementById('ritual-element-soap');
+  const ritualSound = document.getElementById('ritual-element-sound');
+  const ritualQuote = document.getElementById('ritual-display-quote');
+  const ritualStartBtn = document.getElementById('ritual-start-guide-btn');
+  let currentRitual = RITUALS[0];
+
+  function selectRitual(ritual) {
+    currentRitual = ritual;
+    if (ritualTitle) ritualTitle.textContent = ritual.title;
+    if (ritualSubtitle) ritualSubtitle.textContent = ritual.subtitle;
+    if (ritualIntention) ritualIntention.textContent = ritual.intention;
+    if (ritualCandle) ritualCandle.textContent = ritual.elements.candle;
+    if (ritualAroma) ritualAroma.textContent = ritual.elements.aroma;
+    if (ritualSoap) ritualSoap.textContent = ritual.elements.soap;
+    if (ritualSound) ritualSound.textContent = ritual.elements.sound;
+    if (ritualQuote) ritualQuote.textContent = ritual.quote;
+  }
+
+  ritualTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      ritualTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const ritual = RITUALS.find(r => r.id === tab.dataset.ritualId);
+      if (ritual) selectRitual(ritual);
+    });
+  });
+
+  if (ritualStartBtn) {
+    ritualStartBtn.addEventListener('click', () => {
+      if (currentRitual) breathingModal.start(currentRitual);
+    });
+  }
+
+  // 8. Calculadora Interactiva de Numerología
+  const numCalcForm = document.getElementById('numerology-calc-form');
+  const numResultArea = document.getElementById('numerology-result-card');
+  const numLifePathDisplay = document.getElementById('num-res-lifepath');
+  const numTitleDisplay = document.getElementById('num-res-title');
+  const numEssenceDisplay = document.getElementById('num-res-essence');
+  const numFrequencyDisplay = document.getElementById('num-res-frequency');
+  const numMantraDisplay = document.getElementById('num-res-mantra');
+  const numDescDisplay = document.getElementById('num-res-desc');
+  const numProductDisplay = document.getElementById('num-res-product');
+  const numRitualDisplay = document.getElementById('num-res-ritual');
+  const numYearDisplay = document.getElementById('num-res-year');
+  const numSoulDisplay = document.getElementById('num-res-soul');
+
+  if (numCalcForm) {
+    numCalcForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const dateVal = document.getElementById('num-input-date')?.value;
+      const nameVal = document.getElementById('num-input-name')?.value;
+
+      if (!dateVal) {
+        alert('Por favor introduce tu fecha de nacimiento.');
+        return;
+      }
+
+      const reading = getFullNumerologyReading(dateVal, nameVal);
+      if (!reading) return;
+
+      if (numLifePathDisplay) numLifePathDisplay.textContent = reading.lifePathNumber;
+      if (numTitleDisplay) numTitleDisplay.textContent = reading.archetype.title;
+      if (numEssenceDisplay) numEssenceDisplay.textContent = reading.archetype.essence;
+      if (numFrequencyDisplay) numFrequencyDisplay.textContent = reading.archetype.frequency;
+      if (numMantraDisplay) numMantraDisplay.textContent = reading.archetype.mantra;
+      if (numDescDisplay) numDescDisplay.textContent = reading.archetype.description;
+      if (numProductDisplay) numProductDisplay.textContent = reading.archetype.recommendedProduct;
+      if (numRitualDisplay) numRitualDisplay.textContent = reading.archetype.recommendedRitual;
+      if (numYearDisplay) numYearDisplay.textContent = `Tu Año Personal actual es el ciclo ${reading.personalYear}`;
+      if (numSoulDisplay && reading.soulNumber) {
+        numSoulDisplay.textContent = `Tu Número del Alma es el ${reading.soulNumber}`;
+        numSoulDisplay.style.display = 'inline-block';
+      }
+
+      if (numResultArea) {
+        numResultArea.classList.add('active');
+        numResultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  // 9. Renderizado del Journal NÜMA
+  const journalGrid = document.getElementById('journal-posts-grid');
+  if (journalGrid) {
+    journalGrid.innerHTML = JOURNAL_POSTS.map(post => `
+      <article class="journal-card" data-post-id="${post.id}">
+        <img src="${post.image}" alt="${post.title}" class="journal-thumb" loading="lazy">
+        <div class="journal-body">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.6rem;">
+            <span>${post.category}</span>
+            <span>${post.readTime}</span>
+          </div>
+          <h3 style="font-family: var(--font-serif-display); font-size: 1.2rem; color: var(--color-beige-light); margin-bottom: 0.75rem; line-height: 1.35;">
+            ${post.title}
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            ${post.excerpt}
+          </p>
+          <span style="font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-top: auto;">
+            LEER REFLEXIÓN →
+          </span>
+        </div>
+      </article>
+    `).join('');
+
+    journalGrid.querySelectorAll('.journal-card').forEach(card => {
+      card.addEventListener('click', () => {
+        journalModal.open(card.dataset.postId);
+      });
+    });
+  }
+
+  // 10. Wishlist Drawer / Modal Trigger
+  const wishlistBtn = document.getElementById('header-wishlist-btn');
+  if (wishlistBtn) {
+    wishlistBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (store.wishlist.length === 0) {
+        alert('Aún no tienes elementos en tu lista de deseos.');
+      } else {
+        alert(`Tienes ${store.wishlist.length} artículo(s) sagrado(s) guardado(s) en tu lista.`);
+      }
+    });
+  }
+
+  // 11. Formulario de Contacto Directo hacia WhatsApp
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name')?.value.trim();
+      const email = document.getElementById('contact-email')?.value.trim();
+      const message = document.getElementById('contact-message')?.value.trim();
+
+      const waMsg = `Hola NÜMA ✨ Mi nombre es ${name} (${email}).%0A%0AMensaje:%0A${message}`;
+      window.open(`https://wa.me/525500000000?text=${waMsg}`, '_blank');
+      contactForm.reset();
+      alert('¡Gracias por tu mensaje! Te hemos redirigido a WhatsApp para una atención personalizada.');
+    });
+  }
+});
