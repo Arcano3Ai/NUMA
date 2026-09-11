@@ -111,4 +111,30 @@ export function initSoundPlayer() {
       }
     });
   }
+
+  // Activar audio automáticamente en la primera interacción si el usuario no ha hecho click en los botones
+  audio.volume = 0.85;
+
+  function enableAudioOnFirstInteraction() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        setPlayingState(true);
+      }).catch(() => {});
+    }
+  }
+
+  // Intentar autoplay inicial; si el navegador lo bloquea, escuchar la primera interacción
+  audio.play().then(() => {
+    setPlayingState(true);
+  }).catch(() => {
+    const onUserAction = () => {
+      enableAudioOnFirstInteraction();
+      window.removeEventListener('click', onUserAction);
+      window.removeEventListener('touchstart', onUserAction);
+      window.removeEventListener('scroll', onUserAction);
+    };
+    window.addEventListener('click', onUserAction, { once: true });
+    window.addEventListener('touchstart', onUserAction, { once: true });
+    window.addEventListener('scroll', onUserAction, { once: true });
+  });
 }
