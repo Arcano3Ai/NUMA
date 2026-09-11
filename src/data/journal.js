@@ -59,7 +59,7 @@ export const JOURNAL_POSTS = [
     date: '15 de Enero, 2026',
     readTime: '5 min de lectura',
     author: 'Área de Sabiduría Transpersonal',
-    image: 'https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=85',
     excerpt: 'La vida no es una línea recta agotadora, sino una espiral de estaciones. Aprende a identificar si estás en un año de siembra, de cosecha o de introspección.',
     content: `
       <p class="lead">En la naturaleza no hay flor que florezca los 365 días del año sin un periodo de descanso y enraizamiento. La numerología nos enseña que el tiempo humano sigue la misma sabiduría estacional.</p>

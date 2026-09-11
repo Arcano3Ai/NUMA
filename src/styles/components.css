@@ -538,3 +538,109 @@
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
 }
+
+/* --- MINI REPRODUCTOR FLOTANTE NÜMA --- */
+.numa-floating-player {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(12, 12, 12, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 40px;
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 15px rgba(255, 215, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.numa-floating-player:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.floating-play-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  color: #0A0A0A;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.floating-play-btn:hover {
+  transform: scale(1.08);
+}
+
+.floating-player-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-player-title {
+  font-family: var(--font-serif-display);
+  font-size: 0.82rem;
+  color: var(--color-beige-light);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.floating-player-sub {
+  font-size: 0.68rem;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.floating-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+  margin-left: 4px;
+}
+
+.floating-equalizer span {
+  width: 2px;
+  height: 4px;
+  background: var(--color-gold);
+  border-radius: 1px;
+  transition: height 0.2s ease;
+}
+
+.numa-floating-player.is-playing .floating-equalizer span:nth-child(1) {
+  animation: floatEq 0.9s infinite ease-in-out alternate;
+}
+.numa-floating-player.is-playing .floating-equalizer span:nth-child(2) {
+  animation: floatEq 1.2s infinite ease-in-out alternate 0.2s;
+}
+.numa-floating-player.is-playing .floating-equalizer span:nth-child(3) {
+  animation: floatEq 0.7s infinite ease-in-out alternate 0.4s;
+}
+
+@keyframes floatEq {
+  0% { height: 3px; }
+  100% { height: 14px; }
+}
+
+@media (max-width: 640px) {
+  .numa-floating-player {
+    bottom: 16px;
+    left: 16px;
+    padding: 5px 12px 5px 6px;
+  }
+}
+

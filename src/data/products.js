@@ -92,7 +92,7 @@ export const PRODUCTS = [
     reviewsCount: 42,
     isFeatured: true,
     badge: 'Best Seller',
-    image: 'https://images.unsplash.com/photo-1607006314644-88cb077c5709?auto=format&fit=crop&w=900&q=85',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85',
     tagline: 'Purificación profunda con mística mineral mexicana.',
     description: 'Saponificado en frío durante 6 semanas con aceites orgánicos de oliva virgen, coco y manteca de karité, infusionado con carbón activado de coco y destellos de mica dorada biodegradable.',
     aroma: {

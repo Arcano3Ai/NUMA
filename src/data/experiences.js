@@ -6,7 +6,7 @@ export const EXPERIENCES = [
     categoryTitle: 'NUMEROLOGÍA',
     tagline: 'Un mapa vibracional de autoconocimiento, ciclos y dones innatos.',
     description: 'La numerología en NÜMA no es adivinatoria: es una brújula de introspección profunda basada en la vibración de tu fecha natal y tu nombre completo. A través del análisis de tu Camino de Vida, Número del Alma, Expresión y Año Personal, descubrimos las frecuencias que rigen tus talentos, aprendizajes kármicos y momentos óptimos para tomar decisiones.',
-    image: 'https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&w=900&q=85',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=900&q=85',
     types: [
       {
         id: 'num-individual',

@@ -11,6 +11,11 @@ export function initSoundPlayer() {
   const progressFill = document.getElementById('sound-progress-fill');
   const waveBars = document.querySelectorAll('.wave-bar');
   const heroAudioBtn = document.getElementById('hero-audio-btn');
+  const floatingPlayer = document.getElementById('numa-floating-player');
+  const floatingPlayBtn = document.getElementById('floating-audio-play-btn');
+  const floatingPlayIcon = document.getElementById('floating-play-icon');
+  const floatingPauseIcon = document.getElementById('floating-pause-icon');
+  const floatingStatus = document.getElementById('floating-player-status');
 
   if (!audio || !playBtn) return;
 
@@ -30,6 +35,12 @@ export function initSoundPlayer() {
         heroAudioBtn.innerHTML = '⏸ PAUSAR FRECUENCIA';
         heroAudioBtn.classList.add('is-playing');
       }
+      if (floatingPlayer) {
+        floatingPlayer.classList.add('is-playing');
+        if (floatingPlayIcon) floatingPlayIcon.style.display = 'none';
+        if (floatingPauseIcon) floatingPauseIcon.style.display = 'block';
+        if (floatingStatus) floatingStatus.textContent = '432 Hz • Sonando ✦';
+      }
     } else {
       if (playIcon) playIcon.style.display = 'block';
       if (pauseIcon) pauseIcon.style.display = 'none';
@@ -38,11 +49,24 @@ export function initSoundPlayer() {
         heroAudioBtn.innerHTML = '✦ SINTONIZAR FRECUENCIA';
         heroAudioBtn.classList.remove('is-playing');
       }
+      if (floatingPlayer) {
+        floatingPlayer.classList.remove('is-playing');
+        if (floatingPlayIcon) floatingPlayIcon.style.display = 'block';
+        if (floatingPauseIcon) floatingPauseIcon.style.display = 'none';
+        if (floatingStatus) floatingStatus.textContent = '432 Hz • Sintonizar';
+      }
     }
   }
 
   if (heroAudioBtn) {
     heroAudioBtn.addEventListener('click', () => {
+      playBtn.click();
+    });
+  }
+
+  if (floatingPlayer) {
+    floatingPlayer.addEventListener('click', (e) => {
+      // Evitar doble toggle si se hace click directamente en el botón
       playBtn.click();
     });
   }
