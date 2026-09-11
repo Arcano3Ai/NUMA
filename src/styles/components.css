@@ -142,8 +142,11 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #111111;
+  background: radial-gradient(circle at center, #26221c 0%, #121212 80%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image-box img {

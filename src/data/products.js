@@ -38,7 +38,7 @@ export const PRODUCTS = [
     reviewsCount: 29,
     isFeatured: true,
     badge: 'Exclusiva NÜMA',
-    image: 'https://images.unsplash.com/photo-1570823635306-250abb06d4b3?auto=format&fit=crop&w=900&q=85',
+    image: './assets/images/armonia_sagrada_tres.png',
     tagline: 'Luz dorada que sintoniza tu espacio con tu esencia.',
     description: 'Nuestra vela icónica en vaso negro mate con acabado interior dorado refractario. A medida que la cera se funde, el reflejo dorado cobra vida iluminando la geometría sagrada del símbolo NÜMA.',
     aroma: {
@@ -283,7 +283,7 @@ export const PRODUCTS = [
     reviewsCount: 54,
     isFeatured: true,
     badge: 'Cofre Emblemático',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=85',
+    image: './assets/images/numa_editorial_card.png',
     tagline: 'Todo lo necesario para inaugurar tu santuario personal.',
     description: 'Presentado en una elegante caja rígida negra mate con sello dorado hot-stamping y papel seda. Incluye: Vela Calma Intensa 280g, Jabón Botánico Carbón & Oro 150g, Bruma Áurica 100ml, Cerillos largos con cabeza negra y Tarjeta de Intención guiada.',
     aroma: {
@@ -309,7 +309,7 @@ export const PRODUCTS = [
     reviewsCount: 23,
     isFeatured: false,
     badge: 'Regalo Ideal',
-    image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=85',
+    image: './assets/images/guia_visual_frecuencia.png',
     tagline: 'Vela Sagrada Frecuencia del Ser + Roll-on Óleo de Equilibrio.',
     description: 'Un dúo armónico creado para quienes buscan un ancla de presencia en su rutina diaria de trabajo o meditación. Incluye bolsita de terciopelo negro grabada en hilo dorado.',
     aroma: {

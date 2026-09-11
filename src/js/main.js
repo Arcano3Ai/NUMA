@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     productsContainer.innerHTML = filtered.map(p => `
       <div class="product-card" data-product-id="${p.id}">
         <div class="product-image-box">
-          <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null; this.src='./assets/images/numa_editorial_card.png';">
           ${p.badge ? `<span class="badge badge-gold product-badge-pos">${p.badge}</span>` : ''}
           <button class="product-wishlist-btn ${store.isInWishlist(p.id) ? 'active' : ''}" data-wish-id="${p.id}" title="Favorito">
             ♥
