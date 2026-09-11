@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Inicializar Canvas de Partículas
   initParticles('particles-canvas');
 
-  // 2. Inicializar Audio de Cuencos
+  // 2. Inicializar Audio de Cuencos & Canción Frecuencia del Ser
   initSoundPlayer();
+
 
   // 3. Inicializar Modales
   const breathingModal = new BreathingRitualModal();

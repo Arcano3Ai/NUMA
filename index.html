@@ -121,16 +121,18 @@
   <main>
     <!-- 1. HERO SECTION -->
     <section class="hero-section" id="inicio">
+      <!-- Background Video Cinemático Oficial NÜMA -->
+      <video class="hero-video-bg" autoplay loop muted playsinline preload="auto">
+        <source src="./assets/video/hero_bg_video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
       <canvas id="particles-canvas"></canvas>
       <div class="hero-aura-bg"></div>
 
       <div class="container hero-content">
-        <div class="hero-logo-badge">
-          <img src="./assets/images/numa_brand_mark.png" alt="Símbolo NÜMA Frecuencia">
-        </div>
+        <!-- Espaciador que enmarca el logotipo animado del video -->
+        <div class="hero-video-spacer" style="height: clamp(140px, 20vw, 220px);"></div>
 
-        <h1 class="hero-title text-gold-gradient">NÜMA</h1>
-        <div class="hero-subtitle">FRECUENCIA DEL SER</div>
         <p class="hero-quote">“Vuelve a ti.”</p>
 
         <p class="hero-lead">
@@ -144,6 +146,9 @@
           <a href="#tienda" class="btn btn-outline">
             EXPLORAR TIENDA
           </a>
+          <button id="hero-audio-btn" class="btn btn-gold-glow" title="Sintonizar Frecuencia del Ser">
+            ✦ SINTONIZAR FRECUENCIA
+          </button>
         </div>
       </div>
     </section>
@@ -592,10 +597,11 @@
           <div style="max-width: 580px; margin: 0 auto; background: rgba(18,18,18,0.75); border: 1px solid var(--color-border-gold); border-radius: var(--radius-md); padding: 1.75rem; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
               <div style="text-align: left;">
-                <span class="eyebrow" style="margin-bottom: 0.2rem; font-size: 0.68rem;">Muestra Acústica</span>
-                <div style="font-family: var(--font-serif-display); font-size: 1.1rem; color: var(--color-beige-light);">
-                  Frecuencia de Cuencos Tibetanos
+                <span class="eyebrow" style="margin-bottom: 0.2rem; font-size: 0.68rem;">Canción Insignia NÜMA</span>
+                <div style="font-family: var(--font-serif-display); font-size: 1.15rem; color: var(--color-beige-light);">
+                  Frecuencia del Ser
                 </div>
+                <div style="font-size: 0.75rem; color: var(--color-gold-light);">Composición Original Armonizadora (432 Hz)</div>
               </div>
               <button id="sound-play-btn" class="btn-icon" style="width: 48px; height: 48px; background: var(--gradient-gold); color: #0A0A0A; border: none; box-shadow: 0 0 20px rgba(255,215,0,0.4);" title="Reproducir audio">
                 <!-- Play Icon -->
@@ -628,10 +634,10 @@
 
             <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted);">
               <span id="sound-time-current">00:00</span>
-              <span id="sound-time-total">03:27</span>
+              <span id="sound-time-total">04:02</span>
             </div>
 
-            <audio id="numa-sound-audio" src="./assets/audio/cuencos_frecuencia.mp3" preload="metadata"></audio>
+            <audio id="numa-sound-audio" src="./assets/audio/frecuencia_del_ser.mp3" preload="metadata"></audio>
           </div>
 
           <div style="margin-top: 2.5rem;">

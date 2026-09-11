@@ -10,6 +10,7 @@ export function initSoundPlayer() {
   const progressBar = document.getElementById('sound-progress-bar');
   const progressFill = document.getElementById('sound-progress-fill');
   const waveBars = document.querySelectorAll('.wave-bar');
+  const heroAudioBtn = document.getElementById('hero-audio-btn');
 
   if (!audio || !playBtn) return;
 
@@ -25,11 +26,25 @@ export function initSoundPlayer() {
       if (playIcon) playIcon.style.display = 'none';
       if (pauseIcon) pauseIcon.style.display = 'block';
       waveBars.forEach(bar => bar.classList.add('animating'));
+      if (heroAudioBtn) {
+        heroAudioBtn.innerHTML = '⏸ PAUSAR FRECUENCIA';
+        heroAudioBtn.classList.add('is-playing');
+      }
     } else {
       if (playIcon) playIcon.style.display = 'block';
       if (pauseIcon) pauseIcon.style.display = 'none';
       waveBars.forEach(bar => bar.classList.remove('animating'));
+      if (heroAudioBtn) {
+        heroAudioBtn.innerHTML = '✦ SINTONIZAR FRECUENCIA';
+        heroAudioBtn.classList.remove('is-playing');
+      }
     }
+  }
+
+  if (heroAudioBtn) {
+    heroAudioBtn.addEventListener('click', () => {
+      playBtn.click();
+    });
   }
 
   playBtn.addEventListener('click', () => {
