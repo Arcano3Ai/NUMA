@@ -195,7 +195,7 @@ export class BookingSystem {
 
     if (this.confirmedWaBtn) {
       const waMsg = `Hola NÜMA ✨ Deseo confirmar mi reserva ${booking.id}:%0A• Experiencia: ${serviceName}%0A• Modalidad: ${modality}%0A• Fecha: ${date} a las ${time}%0A• Nombre: ${name}%0A• Teléfono: ${phone}`;
-      this.confirmedWaBtn.href = `https://wa.me/525500000000?text=${waMsg}`;
+      this.confirmedWaBtn.href = `https://wa.me/5218441228140?text=${waMsg}`;
     }
 
     this.goToStep(4);

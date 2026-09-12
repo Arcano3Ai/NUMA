@@ -15,6 +15,8 @@ import { SearchModal } from './searchModal.js';
 import { getFullNumerologyReading } from './numerologyEngine.js';
 import { themeEngine } from './themeEngine.js';
 import { i18n } from '../i18n/i18nEngine.js';
+import { NumaBotWidget } from './numaBotWidget.js';
+import { initNumerologyCursor } from './numerologyCursor.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Inicializar Motor de Tema (Claro/Oscuro) y Sistema i18n
@@ -29,8 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 1. Inicializar Canvas de Partículas
+  // 1. Inicializar Canvas de Partículas & Estela de Números Sagrados en el Cursor
   initParticles('particles-canvas');
+  initNumerologyCursor();
 
   // 2. Inicializar Audio de Cuencos & Canción Frecuencia del Ser
   initSoundPlayer();
@@ -51,6 +54,23 @@ document.addEventListener('DOMContentLoaded', () => {
     (postId) => journalModal.open(postId),
     (ritual) => breathingModal.start(ritual)
   );
+
+  // Inicializar Oráculo NÜMA (Bot Autónomo de Numerología y Productos)
+  const numaBot = new NumaBotWidget({
+    onOpenProduct: (prodId) => quickViewModal.open(prodId),
+    onAddToCart: (prodId) => {
+      store.addToCart(prodId);
+      cartDrawer.open();
+    }
+  });
+
+  // Permitir abrir el bot desde cualquier botón con atributo data-open-bot
+  document.querySelectorAll('[data-open-bot]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      numaBot.open();
+    });
+  });
 
   // 4. Header Scroll Detection
   const header = document.querySelector('.site-header');
@@ -330,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('contact-message')?.value.trim();
 
       const waMsg = `Hola NÜMA ✨ Mi nombre es ${name} (${email}).%0A%0AMensaje:%0A${message}`;
-      window.open(`https://wa.me/525500000000?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/5218441228140?text=${waMsg}`, '_blank');
       contactForm.reset();
       alert('¡Gracias por tu mensaje! Te hemos redirigido a WhatsApp para una atención personalizada.');
     });

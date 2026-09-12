@@ -137,7 +137,7 @@ export class CheckoutModal {
     if (this.confirmationWaBtn) {
       const itemsList = order.items.map(i => `• ${i.quantity}x ${i.name} ($${i.price * i.quantity} MXN)`).join('%0A');
       const waMsg = `Hola NÜMA ✨ Acabo de realizar mi orden ${order.id} por $${order.total.toLocaleString('es-MX')} MXN.%0A%0AProductos:%0A${itemsList}%0A%0ACliente: ${name}%0ATel: ${phone}%0ADirección: ${address}, ${city}, ${state}.`;
-      this.confirmationWaBtn.href = `https://wa.me/525500000000?text=${waMsg}`;
+      this.confirmationWaBtn.href = `https://wa.me/5218441228140?text=${waMsg}`;
     }
 
     this.goToStep(3);
