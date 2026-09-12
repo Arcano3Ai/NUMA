@@ -787,7 +787,8 @@
 }
 
 /* ==========================================================================
-   CURSOR DE SIMBOLOGÍA SAGRADA NÜMA (GEOMETRÍA PITAGÓRICA)
+/* ==========================================================================
+   CURSOR: ORBE SAGRADO AMARILLO (BRILLANTE & PARPADEANTE)
    ========================================================================== */
 @media (pointer: fine) {
   body.numa-has-custom-cursor {
@@ -810,52 +811,71 @@
   width: 0;
   height: 0;
   pointer-events: none;
-  z-index: 99999;
-  mix-blend-mode: normal;
+  z-index: 999999;
 }
 
-.sacred-cursor-symbol {
+/* Núcleo del Orbe Amarillo (Compacto ~10px, ultra-notorio, sin perderse) */
+.numa-orb-core {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.65));
-  transition: transform 0.08s linear, filter 0.25s ease;
-}
-
-.sacred-cursor-aura {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 38px;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(1);
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 70%);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.3s ease,
-              border-color 0.3s ease;
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #FFF59D 30%, #FFD600 75%, #FF8F00 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 8px #FFD700, 0 0 16px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 171, 0, 0.7);
+  outline: 1px solid rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* Estado Hover sobre botones / enlaces */
-.numa-sacred-cursor.hovering .sacred-cursor-symbol {
-  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.95));
+/* Halo Luminoso Parpadeante */
+.numa-orb-halo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(var(--halo-x, -100px), var(--halo-y, -100px), 0) translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 215, 0, 0.85);
+  background: radial-gradient(circle, rgba(255, 235, 59, 0.4) 0%, rgba(255, 215, 0, 0.15) 50%, transparent 75%);
+  animation: orbGlimmerPulse 1.4s infinite ease-in-out;
+  pointer-events: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.numa-sacred-cursor.hovering .sacred-cursor-aura {
-  transform: translate(-50%, -50%) scale(1.6);
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.35) 0%, rgba(255, 215, 0, 0.05) 65%, transparent 80%);
-  border-color: rgba(255, 215, 0, 0.6);
+/* Animación de Parpadeo y Brillo Continuo */
+@keyframes orbGlimmerPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.95), 0 0 26px rgba(255, 193, 7, 0.7), inset 0 0 8px rgba(255, 235, 59, 0.7);
+    border-color: rgba(255, 215, 0, 0.95);
+  }
+  50% {
+    opacity: 0.35;
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.4), 0 0 8px rgba(255, 193, 7, 0.2);
+    border-color: rgba(255, 215, 0, 0.35);
+  }
+}
+
+/* Estado Hover (sobre elementos interactivos) */
+.numa-sacred-cursor.hovering .numa-orb-core {
+  transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(1.4);
+  box-shadow: 0 0 16px #FFD700, 0 0 30px rgba(255, 215, 0, 1), 0 0 45px rgba(255, 171, 0, 0.9);
+}
+
+.numa-sacred-cursor.hovering .numa-orb-halo {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 35px rgba(255, 235, 59, 0.9);
 }
 
 /* Estado Clic */
-.numa-sacred-cursor.clicking .sacred-cursor-aura {
-  transform: translate(-50%, -50%) scale(0.85);
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, transparent 70%);
+.numa-sacred-cursor.clicking .numa-orb-core {
+  transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(0.8);
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FFEA00 50%, #FF8F00 100%);
+  box-shadow: 0 0 30px #FFFFFF, 0 0 45px #FFD700;
 }
 
 @media (max-width: 768px), (pointer: coarse) {
