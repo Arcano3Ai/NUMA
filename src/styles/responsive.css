@@ -1,5 +1,11 @@
 /* Optimizaciones Mobile-First & Responsive */
 
+@media (max-width: 1300px) {
+  .header-actions .btn-primary {
+    display: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .main-nav {
     display: none;

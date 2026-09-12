@@ -35,12 +35,45 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#inicio" class="nav-link active" data-i18n="nav_home">INICIO</a>
         <a href="#que-es-numa" class="nav-link" data-i18n="nav_about">NÜMA</a>
-        <a href="#experiencias" class="nav-link" data-i18n="nav_experiences">EXPERIENCIAS</a>
+
+        <!-- Dropdown Experiencias -->
+        <div class="nav-item-dropdown">
+          <a href="#experiencias" class="nav-link nav-dropdown-trigger" data-i18n="nav_experiences">
+            <span>EXPERIENCIAS</span>
+            <svg class="dropdown-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="#meditacion" class="dropdown-item">
+              <span class="dropdown-item-title">
+                <span class="dropdown-item-icon">🧘</span>
+                <span data-i18n="med_title">Meditación Guiada</span>
+                <span class="dropdown-badge-pill">432 Hz</span>
+              </span>
+              <span class="dropdown-item-sub" data-i18n="nav_med_sub">Frecuencias 432 Hz y calma profunda</span>
+            </a>
+            <a href="#numerologia" class="dropdown-item">
+              <span class="dropdown-item-title">
+                <span class="dropdown-item-icon">🔢</span>
+                <span data-i18n="nav_numerology">Carta Numerológica</span>
+              </span>
+              <span class="dropdown-item-sub" data-i18n="nav_num_sub">Mapa del Ser, arquetipos y dones natales</span>
+            </a>
+            <a href="#cuencos" class="dropdown-item">
+              <span class="dropdown-item-title">
+                <span class="dropdown-item-icon">🔔</span>
+                <span data-i18n="nav_sound">Sonoterapia con Cuencos</span>
+              </span>
+              <span class="dropdown-item-sub" data-i18n="nav_sound_sub">Alineación bioenergética por resonancia</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#experiencias" class="dropdown-item dropdown-item-all" data-i18n="nav_all_experiences">
+              Ver todas las experiencias →
+            </a>
+          </div>
+        </div>
+
         <a href="#tienda" class="nav-link" data-i18n="nav_shop">TIENDA</a>
         <a href="#rituales" class="nav-link" data-i18n="nav_rituals">RITUALES</a>
-        <a href="#numerologia" class="nav-link" data-i18n="nav_numerology">NUMEROLOGÍA</a>
-        <a href="#cuencos" class="nav-link" data-i18n="nav_sound">CUENCOS</a>
-        <a href="#meditacion" class="nav-link" data-i18n="nav_meditation" style="color: var(--color-gold);">MEDITACIÓN GUIADA</a>
         <a href="#journal" class="nav-link" data-i18n="nav_journal">JOURNAL</a>
         <a href="#sobre-numa" class="nav-link" data-i18n="nav_contact">NOSOTROS</a>
       </nav>
