@@ -40,6 +40,7 @@
         <a href="#rituales" class="nav-link" data-i18n="nav_rituals">RITUALES</a>
         <a href="#numerologia" class="nav-link" data-i18n="nav_numerology">NUMEROLOGÍA</a>
         <a href="#cuencos" class="nav-link" data-i18n="nav_sound">CUENCOS</a>
+        <a href="#meditacion" class="nav-link" data-i18n="nav_meditation">MEDITACIÓN</a>
         <a href="#journal" class="nav-link" data-i18n="nav_journal">JOURNAL</a>
         <a href="#sobre-numa" class="nav-link" data-i18n="nav_contact">NOSOTROS</a>
       </nav>
@@ -145,6 +146,7 @@
       <a href="#numerologia" class="mobile-nav-link" data-i18n="nav_numerology">NUMEROLOGÍA</a>
       <a href="#oraculo-bot" class="mobile-nav-link" data-open-bot style="color: var(--color-gold);">✨ ORÁCULO NÜMA (BOT)</a>
       <a href="#cuencos" class="mobile-nav-link" data-i18n="nav_sound">CUENCOS & SONIDO</a>
+      <a href="#meditacion" class="mobile-nav-link" data-i18n="nav_meditation">MEDITACIÓN GUIADA</a>
       <a href="#journal" class="mobile-nav-link" data-i18n="nav_journal">JOURNAL NÜMA</a>
       <a href="#sobre-numa" class="mobile-nav-link" data-i18n="nav_contact">SOBRE NOSOTROS</a>
     </nav>
@@ -193,20 +195,20 @@
         <!-- Espaciador que enmarca el logotipo animado del video -->
         <div class="hero-video-spacer" style="height: clamp(140px, 20vw, 220px);"></div>
 
-        <p class="hero-quote">“Vuelve a ti.”</p>
+        <p class="hero-quote" data-i18n="hero_quote">“Vuelve a ti.”</p>
 
-        <p class="hero-lead">
+        <p class="hero-lead" data-i18n="hero_lead">
           Un espacio consagrado para conectar con tu esencia más íntima a través de experiencias conscientes, rituales sensoriales y herramientas de bienestar.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#que-es-numa" class="btn btn-primary btn-gold-shimmer">
+          <a href="#que-es-numa" class="btn btn-primary btn-gold-shimmer" data-i18n="btn_discover_numa">
             DESCUBRIR NÜMA
           </a>
-          <a href="#tienda" class="btn btn-outline">
+          <a href="#tienda" class="btn btn-outline" data-i18n="btn_explore_shop">
             EXPLORAR TIENDA
           </a>
-          <button id="hero-audio-btn" class="btn btn-gold-glow" title="Sintonizar Frecuencia del Ser">
+          <button id="hero-audio-btn" class="btn btn-gold-glow" data-i18n-title="hero_audio_title" data-i18n="btn_tune_freq" title="Sintonizar Frecuencia del Ser">
             ✦ SINTONIZAR FRECUENCIA
           </button>
         </div>
@@ -217,9 +219,9 @@
     <section class="section section-alt" id="que-es-numa">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Concepto & Territorio</span>
-          <h2 class="section-title">Más que una marca. Una frecuencia.</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="about_eyebrow">Concepto & Territorio</span>
+          <h2 class="section-title" data-i18n="about_title">Más que una marca. Una frecuencia.</h2>
+          <p class="section-subtitle" data-i18n="about_desc">
             NÜMA nace como un espacio dedicado a acompañar procesos de conexión personal mediante productos, experiencias y terapias. No buscamos que escapes del mundo, sino que retornes a tu centro en cada pequeño momento.
           </p>
         </div>
@@ -234,8 +236,8 @@
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
             </div>
-            <h3 class="concept-title">CONCIENCIA</h3>
-            <p class="concept-desc">Detener la inercia del día y habitar el momento presente con lucidez, apertura y discernimiento.</p>
+            <h3 class="concept-title" data-i18n="pilar_1_title">CONCIENCIA</h3>
+            <p class="concept-desc" data-i18n="pilar_1_desc">Detener la inercia del día y habitar el momento presente con lucidez, apertura y discernimiento.</p>
           </div>
 
           <!-- Energía -->
@@ -245,8 +247,8 @@
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
             </div>
-            <h3 class="concept-title">ENERGÍA</h3>
-            <p class="concept-desc">Reconocer tu vibración y cultivar prácticas diarias que eleven tu vitalidad y enfoque sagrado.</p>
+            <h3 class="concept-title" data-i18n="pilar_2_title">ENERGÍA</h3>
+            <p class="concept-desc" data-i18n="pilar_2_desc">Reconocer tu vibración y cultivar prácticas diarias que eleven tu vitalidad y enfoque sagrado.</p>
           </div>
 
           <!-- Equilibrio -->
@@ -260,8 +262,8 @@
                 <circle cx="19" cy="12" r="2"></circle>
               </svg>
             </div>
-            <h3 class="concept-title">EQUILIBRIO</h3>
-            <p class="concept-desc">Sintonía amorosa entre cuerpo, mente, emociones y el entorno que habitas día con día.</p>
+            <h3 class="concept-title" data-i18n="pilar_3_title">EQUILIBRIO</h3>
+            <p class="concept-desc" data-i18n="pilar_3_desc">Sintonía amorosa entre cuerpo, mente, emociones y el entorno que habitas día con día.</p>
           </div>
 
           <!-- Transformación -->
@@ -271,8 +273,8 @@
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
               </svg>
             </div>
-            <h3 class="concept-title">TRANSFORMACIÓN</h3>
-            <p class="concept-desc">Inspirar pequeñas pausas deliberadas capaces de detonar giros profundos en tu bienestar.</p>
+            <h3 class="concept-title" data-i18n="pilar_4_title">TRANSFORMACIÓN</h3>
+            <p class="concept-desc" data-i18n="pilar_4_desc">Inspirar pequeñas pausas deliberadas capaces de detonar giros profundos en tu bienestar.</p>
           </div>
 
           <!-- Esencia -->
@@ -282,8 +284,8 @@
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
             </div>
-            <h3 class="concept-title">ESENCIA</h3>
-            <p class="concept-desc">Despojarte del personaje exterior para reconectar con la verdad más luminosa de quien eres.</p>
+            <h3 class="concept-title" data-i18n="pilar_5_title">ESENCIA</h3>
+            <p class="concept-desc" data-i18n="pilar_5_desc">Despojarte del personaje exterior para reconectar con la verdad más luminosa de quien eres.</p>
           </div>
         </div>
       </div>
@@ -293,9 +295,9 @@
     <section class="section" id="experiencias">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Acompañamiento Personal</span>
-          <h2 class="section-title">Experiencias NÜMA</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="exp_eyebrow">Acompañamiento Personal</span>
+          <h2 class="section-title" data-i18n="exp_title">Experiencias NÜMA</h2>
+          <p class="section-subtitle" data-i18n="exp_subtitle">
             Sesiones de autoconocimiento, reflexión y balance acústico diseñadas para afinar tu frecuencia en modalidades presenciales y virtuales.
           </p>
         </div>
@@ -305,33 +307,33 @@
           <div class="experience-card">
             <div class="experience-img-wrap">
               <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=900&q=85" alt="Sesión de Numerología NÜMA">
-              <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;">Autoconocimiento</span>
+              <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;" data-i18n="exp_card_1_badge">Autoconocimiento</span>
             </div>
             <div class="experience-content">
-              <span class="eyebrow" style="margin-bottom: 0.2rem;">NUMEROLOGÍA</span>
-              <h3 class="product-title" style="font-size: 1.35rem; margin-bottom: 0.75rem;">
+              <span class="eyebrow" style="margin-bottom: 0.2rem;" data-i18n="exp_card_1_tag">NUMEROLOGÍA</span>
+              <h3 class="product-title" style="font-size: 1.35rem; margin-bottom: 0.75rem;" data-i18n="exp_card_1_title">
                 Carta Numerológica & Mapa del Ser
               </h3>
-              <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;" data-i18n="exp_card_1_desc">
                 La numerología como una experiencia de autoconocimiento y reflexión sobre tus dones, momentos propicios y aprendizaje de vida.
               </p>
 
               <div class="experience-type-list">
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Sesiones Individuales (75 min)</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_1_ind">Sesiones Individuales (75 min)</span>
                   <strong style="color: var(--color-gold); font-size: 0.9rem;">$1,200 MXN</strong>
                 </div>
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Lecturas de Pareja / Vínculos (90 min)</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_1_couple">Lecturas de Pareja / Vínculos (90 min)</span>
                   <strong style="color: var(--color-gold); font-size: 0.9rem;">$1,800 MXN</strong>
                 </div>
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Modalidad: Online o Presencial</span>
-                  <span class="badge badge-dark">Disponible</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_1_mod">Modalidad: Online o Presencial</span>
+                  <span class="badge badge-dark" data-i18n="exp_card_1_avail">Disponible</span>
                 </div>
               </div>
 
-              <button class="btn btn-primary btn-gold-shimmer" style="margin-top: auto;" data-book-service="numerologia-transpersonal">
+              <button class="btn btn-primary btn-gold-shimmer" style="margin-top: auto;" data-book-service="numerologia-transpersonal" data-i18n="exp_card_1_btn">
                 RESERVAR SESIÓN
               </button>
             </div>
@@ -341,33 +343,33 @@
           <div class="experience-card">
             <div class="experience-img-wrap">
               <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=900&q=85" alt="Sesión de Cuencos Tibetanos">
-              <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;">Vibración & Sonido</span>
+              <span class="badge badge-gold" style="position: absolute; top: 1rem; left: 1rem;" data-i18n="exp_card_2_badge">Vibración & Sonido</span>
             </div>
             <div class="experience-content">
-              <span class="eyebrow" style="margin-bottom: 0.2rem;">CUENCOS / SONOTERAPIA</span>
-              <h3 class="product-title" style="font-size: 1.35rem; margin-bottom: 0.75rem;">
+              <span class="eyebrow" style="margin-bottom: 0.2rem;" data-i18n="exp_card_2_tag">CUENCOS / SONOTERAPIA</span>
+              <h3 class="product-title" style="font-size: 1.35rem; margin-bottom: 0.75rem;" data-i18n="exp_card_2_title">
                 Inmersión Sonora & Relajación Celular
               </h3>
-              <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.25rem;" data-i18n="exp_card_2_desc">
                 Experiencias basadas en vibración armónica, cuencos tibetanos de 7 metales y cuarzo para propiciar una profunda quietud corporal y mental.
               </p>
 
               <div class="experience-type-list">
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Baño Sonoro Individual (60 min)</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_2_ind">Baño Sonoro Individual (60 min)</span>
                   <strong style="color: var(--color-gold); font-size: 0.9rem;">$1,100 MXN</strong>
                 </div>
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Círculo de Sonido Grupal (75 min)</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_2_group">Círculo de Sonido Grupal (75 min)</span>
                   <strong style="color: var(--color-gold); font-size: 0.9rem;">$550 MXN</strong>
                 </div>
                 <div class="experience-type-item">
-                  <span style="font-size: 0.85rem; color: var(--color-beige);">Modalidad: Estudio o Sesión HD</span>
-                  <span class="badge badge-dark">Disponible</span>
+                  <span style="font-size: 0.85rem; color: var(--color-beige);" data-i18n="exp_card_2_mod">Modalidad: Estudio o Sesión HD</span>
+                  <span class="badge badge-dark" data-i18n="exp_card_2_avail">Disponible</span>
                 </div>
               </div>
 
-              <button class="btn btn-primary btn-gold-shimmer" style="margin-top: auto;" data-book-service="sonoterapia-cuencos">
+              <button class="btn btn-primary btn-gold-shimmer" style="margin-top: auto;" data-book-service="sonoterapia-cuencos" data-i18n="exp_card_2_btn">
                 RESERVAR EXPERIENCIA
               </button>
             </div>
@@ -376,29 +378,29 @@
 
         <!-- Arquitectura Extensible de Nuevas Categorías -->
         <div class="upcoming-box">
-          <span class="eyebrow" style="color: var(--color-gold-deep);">Próximos Horizontes NÜMA</span>
-          <h3 style="font-family: var(--font-serif-display); font-size: 1.3rem; color: var(--color-beige-light); margin-bottom: 0.5rem;">
+          <span class="eyebrow" style="color: var(--color-gold-deep);" data-i18n="exp_upcoming_eyebrow">Próximos Horizontes NÜMA</span>
+          <h3 style="font-family: var(--font-serif-display); font-size: 1.3rem; color: var(--color-beige-light); margin-bottom: 0.5rem;" data-i18n="exp_upcoming_title">
             Nuevas disciplinas en camino
           </h3>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;" data-i18n="exp_upcoming_desc">
             Nuestra arquitectura modular está concebida para integrar nuevas terapias, talleres y retiros de bienestar sin alterar la esencia de la marca.
           </p>
 
           <div class="upcoming-grid">
             <div class="upcoming-item">
-              <span class="badge badge-gold" style="margin-bottom: 0.5rem;">[NUEVA EXPERIENCIA]</span>
-              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;">Respiración Consciente & Breathwork</h4>
-              <p style="font-size: 0.78rem; color: var(--color-text-muted);">Técnicas de regulación somática a través del aire.</p>
+              <span class="badge badge-gold" style="margin-bottom: 0.5rem;" data-i18n="exp_up_1_badge">[NUEVA EXPERIENCIA]</span>
+              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;" data-i18n="exp_up_1_title">Respiración Consciente & Breathwork</h4>
+              <p style="font-size: 0.78rem; color: var(--color-text-muted);" data-i18n="exp_up_1_desc">Técnicas de regulación somática a través del aire.</p>
             </div>
             <div class="upcoming-item">
-              <span class="badge badge-gold" style="margin-bottom: 0.5rem;">[NUEVA TERAPIA]</span>
-              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;">Círculos de Luna & Cacao Sagrado</h4>
-              <p style="font-size: 0.78rem; color: var(--color-text-muted);">Encuentros de integración, palabra y meditación.</p>
+              <span class="badge badge-gold" style="margin-bottom: 0.5rem;" data-i18n="exp_up_2_badge">[NUEVA TERAPIA]</span>
+              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;" data-i18n="exp_up_2_title">Círculos de Luna & Cacao Sagrado</h4>
+              <p style="font-size: 0.78rem; color: var(--color-text-muted);" data-i18n="exp_up_2_desc">Encuentros de integración, palabra y meditación.</p>
             </div>
             <div class="upcoming-item">
-              <span class="badge badge-gold" style="margin-bottom: 0.5rem;">[NUEVO RITUAL]</span>
-              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;">Retiros Boutique de Silencio</h4>
-              <p style="font-size: 0.78rem; color: var(--color-text-muted);">Jornadas de desconexión profunda en naturaleza.</p>
+              <span class="badge badge-gold" style="margin-bottom: 0.5rem;" data-i18n="exp_up_3_badge">[NUEVO RITUAL]</span>
+              <h4 style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--color-beige); margin-bottom: 0.35rem;" data-i18n="exp_up_3_title">Retiros Boutique de Silencio</h4>
+              <p style="font-size: 0.78rem; color: var(--color-text-muted);" data-i18n="exp_up_3_desc">Jornadas de desconexión profunda en naturaleza.</p>
             </div>
           </div>
         </div>
@@ -409,22 +411,22 @@
     <section class="section section-alt" id="tienda">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Boutique de Bienestar</span>
-          <h2 class="section-title">Rituales que puedes llevar contigo</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="shop_eyebrow">Boutique de Bienestar</span>
+          <h2 class="section-title" data-i18n="shop_title">Rituales que puedes llevar contigo</h2>
+          <p class="section-subtitle" data-i18n="shop_subtitle">
             Herramientas botánicas formuladas con cera vegetal, aceites esenciales puros y sales minerales. Elaboradas artesanalmente para transformar tu hogar en un templo sensorial.
           </p>
         </div>
 
         <!-- Filtros de Categorías -->
         <div class="category-filter-bar">
-          <button class="category-filter-btn active" data-category="all">TODAS</button>
-          <button class="category-filter-btn" data-category="velas">VELAS</button>
-          <button class="category-filter-btn" data-category="jabones">JABONES</button>
-          <button class="category-filter-btn" data-category="aromas">AROMAS</button>
-          <button class="category-filter-btn" data-category="difusores">DIFUSORES</button>
-          <button class="category-filter-btn" data-category="bano">BAÑO Y RELAJACIÓN</button>
-          <button class="category-filter-btn" data-category="kits">KITS NÜMA</button>
+          <button class="category-filter-btn active" data-category="all" data-i18n="filter_all">TODAS</button>
+          <button class="category-filter-btn" data-category="velas" data-i18n="filter_candles">VELAS</button>
+          <button class="category-filter-btn" data-category="jabones" data-i18n="filter_soaps">JABONES</button>
+          <button class="category-filter-btn" data-category="aromas" data-i18n="filter_aromas">AROMAS</button>
+          <button class="category-filter-btn" data-category="difusores" data-i18n="filter_diffusers">DIFUSORES</button>
+          <button class="category-filter-btn" data-category="bano" data-i18n="filter_bath">BAÑO Y RELAJACIÓN</button>
+          <button class="category-filter-btn" data-category="kits" data-i18n="filter_kits">KITS NÜMA</button>
         </div>
 
         <!-- Retícula de Productos -->
@@ -437,12 +439,12 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="font-size: 2rem; color: var(--color-gold);">✦</div>
             <div>
-              <h4 style="font-family: var(--font-serif-display); font-size: 1.05rem; color: var(--color-beige-light);">Envío Nacional Seguro a Todo México</h4>
-              <p style="font-size: 0.82rem; color: var(--color-text-muted);">Envío de cortesía en órdenes a partir de $1,200 MXN. Empaque sustentable y protegido.</p>
+              <h4 style="font-family: var(--font-serif-display); font-size: 1.05rem; color: var(--color-beige-light);" data-i18n="shop_shipping_title">Envío Nacional Seguro a Todo México</h4>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted);" data-i18n="shop_shipping_desc">Envío de cortesía en órdenes a partir de $1,200 MXN. Empaque sustentable y protegido.</p>
             </div>
           </div>
           <div style="font-size: 0.82rem; color: var(--color-gold);">
-            Usa el código <strong style="color: var(--color-beige); letter-spacing: 0.1em;">NUMAFRECUENCIA</strong> para 15% OFF
+            <span data-i18n="shop_shipping_code_pre">Usa el código</span> <strong style="color: var(--color-beige); letter-spacing: 0.1em;">NUMAFRECUENCIA</strong> <span data-i18n="shop_shipping_code_post">para 15% OFF</span>
           </div>
         </div>
       </div>
@@ -452,9 +454,9 @@
     <section class="section" id="rituales">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Experiencias Completas</span>
-          <h2 class="section-title">Rituales NÜMA</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="rituals_eyebrow">Experiencias Completas</span>
+          <h2 class="section-title" data-i18n="rituals_title">Rituales NÜMA</h2>
+          <p class="section-subtitle" data-i18n="rituals_subtitle">
             NÜMA no vende únicamente objetos aislados, sino rituales completos. Cada experiencia combina luz de vela, aroma botánico, cuidado dérmico, vibración sonora y una respiración guiada.
           </p>
         </div>
@@ -462,24 +464,24 @@
         <!-- Selector de Rituales con Situación Específica -->
         <div class="rituals-selector">
           <button class="ritual-tab-btn active" data-ritual-id="ritual-calma">
-            <span class="tab-label">RITUAL DE CALMA</span>
-            <span class="tab-situation">Estrés & Sobrecarga</span>
+            <span class="tab-label" data-i18n="ritual_tab_calma">RITUAL DE CALMA</span>
+            <span class="tab-situation" data-i18n="ritual_sit_calma">Estrés & Sobrecarga</span>
           </button>
           <button class="ritual-tab-btn" data-ritual-id="ritual-energia">
-            <span class="tab-label">RITUAL DE ENERGÍA</span>
-            <span class="tab-situation">Apatía & Fatiga</span>
+            <span class="tab-label" data-i18n="ritual_tab_energia">RITUAL DE ENERGÍA</span>
+            <span class="tab-situation" data-i18n="ritual_sit_energia">Apatía & Fatiga</span>
           </button>
           <button class="ritual-tab-btn" data-ritual-id="ritual-intencion">
-            <span class="tab-label">RITUAL DE INTENCIÓN</span>
-            <span class="tab-situation">Nuevos Ciclos</span>
+            <span class="tab-label" data-i18n="ritual_tab_intencion">RITUAL DE INTENCIÓN</span>
+            <span class="tab-situation" data-i18n="ritual_sit_intencion">Nuevos Ciclos</span>
           </button>
           <button class="ritual-tab-btn" data-ritual-id="ritual-equilibrio">
-            <span class="tab-label">RITUAL DE EQUILIBRIO</span>
-            <span class="tab-situation">Arraigo & Centro</span>
+            <span class="tab-label" data-i18n="ritual_tab_equilibrio">RITUAL DE EQUILIBRIO</span>
+            <span class="tab-situation" data-i18n="ritual_sit_equilibrio">Arraigo & Centro</span>
           </button>
           <button class="ritual-tab-btn" data-ritual-id="ritual-descanso">
-            <span class="tab-label">RITUAL DE DESCANSO</span>
-            <span class="tab-situation">Insomnio & Rendición</span>
+            <span class="tab-label" data-i18n="ritual_tab_descanso">RITUAL DE DESCANSO</span>
+            <span class="tab-situation" data-i18n="ritual_sit_descanso">Insomnio & Rendición</span>
           </button>
         </div>
 
@@ -488,7 +490,7 @@
           <!-- Columna Izquierda: Situación, Intención y Elementos -->
           <div class="ritual-detail-col-left">
             <div class="ritual-situation-pill">
-              <span class="situation-pill-icon">✦ SITUACIÓN ESPECÍFICA:</span>
+              <span class="situation-pill-icon" data-i18n="ritual_situation_label">✦ SITUACIÓN ESPECÍFICA:</span>
               <span id="ritual-display-situation-badge">Estrés & Sobrecarga Mental</span>
             </div>
 
@@ -503,22 +505,22 @@
             <!-- Bloque de Diagnóstico Situacional -->
             <div class="ritual-situation-box">
               <div class="ritual-situation-desc-row">
-                <span class="situation-label">Indicado para:</span>
+                <span class="situation-label" data-i18n="ritual_indicated_for">Indicado para:</span>
                 <p id="ritual-display-situation" class="situation-text">
                   Diseñado específicamente para días de alta exigencia, fatiga sensorial, agobio laboral, ansiedad o cuando el ruido exterior satura tu paz interior.
                 </p>
               </div>
               <div class="ritual-meta-grid">
                 <div class="ritual-meta-item">
-                  <span class="meta-label">Momento Óptimo</span>
+                  <span class="meta-label" data-i18n="ritual_optimum_moment">Momento Óptimo</span>
                   <strong class="meta-val" id="ritual-display-moment">Al atardecer o tras una jornada intensa</strong>
                 </div>
                 <div class="ritual-meta-item">
-                  <span class="meta-label">Duración</span>
+                  <span class="meta-label" data-i18n="ritual_duration">Duración</span>
                   <strong class="meta-val" id="ritual-display-duration">20 - 30 minutos</strong>
                 </div>
                 <div class="ritual-meta-item">
-                  <span class="meta-label">Frecuencia Vibracional</span>
+                  <span class="meta-label" data-i18n="ritual_vibrational_freq">Frecuencia Vibracional</span>
                   <strong class="meta-val" id="ritual-display-frequency">432 Hz — Resonancia Terrestre</strong>
                 </div>
               </div>
@@ -529,7 +531,7 @@
               <div class="ritual-element-pill">
                 <span style="color: var(--color-gold); font-size: 1.1rem;">🕯️</span>
                 <div>
-                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;">Vela de Ritual</strong>
+                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;" data-i18n="ritual_lbl_candle">Vela de Ritual</strong>
                   <span style="font-size: 0.85rem; color: var(--color-beige);" id="ritual-element-candle">Vela Ritual Calma Intensa (Lavanda Silvestre & Vainilla)</span>
                 </div>
               </div>
@@ -537,7 +539,7 @@
               <div class="ritual-element-pill">
                 <span style="color: var(--color-gold); font-size: 1.1rem;">🌿</span>
                 <div>
-                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;">Aroma & Bruma</strong>
+                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;" data-i18n="ritual_lbl_aroma">Aroma & Bruma</strong>
                   <span style="font-size: 0.85rem; color: var(--color-beige);" id="ritual-element-aroma">Bruma Áurica Frecuencia NÜMA (3 pulsaciones sobre el aura)</span>
                 </div>
               </div>
@@ -545,7 +547,7 @@
               <div class="ritual-element-pill">
                 <span style="color: var(--color-gold); font-size: 1.1rem;">🫧</span>
                 <div>
-                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;">Jabón Artesanal</strong>
+                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;" data-i18n="ritual_lbl_soap">Jabón Artesanal</strong>
                   <span style="font-size: 0.85rem; color: var(--color-beige);" id="ritual-element-soap">Jabón Artesanal Lavanda & Caléndula</span>
                 </div>
               </div>
@@ -553,14 +555,14 @@
               <div class="ritual-element-pill">
                 <span style="color: var(--color-gold); font-size: 1.1rem;">🎵</span>
                 <div>
-                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;">Sonido & Frecuencia</strong>
+                  <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); display: block;" data-i18n="ritual_lbl_sound">Sonido & Frecuencia</strong>
                   <span style="font-size: 0.85rem; color: var(--color-beige);" id="ritual-element-sound">Ondas armónicas de cuencos de cuarzo en frecuencia 432 Hz</span>
                 </div>
               </div>
             </div>
 
             <div style="margin-top: 2rem;">
-              <button class="btn btn-primary btn-gold-shimmer" id="ritual-start-guide-btn">
+              <button class="btn btn-primary btn-gold-shimmer" id="ritual-start-guide-btn" data-i18n="btn_start_breathing">
                 COMENZAR RESPIRACIÓN GUIADA
               </button>
             </div>
@@ -571,8 +573,8 @@
             <!-- Protocolo Paso a Paso -->
             <div class="ritual-protocol-card">
               <div class="protocol-header">
-                <span class="protocol-badge">PASO A PASO</span>
-                <h4 class="protocol-title">Protocolo Sagrado del Ritual</h4>
+                <span class="protocol-badge" data-i18n="ritual_protocol_badge">PASO A PASO</span>
+                <h4 class="protocol-title" data-i18n="ritual_protocol_title">Protocolo Sagrado del Ritual</h4>
               </div>
               <ol class="ritual-steps-list" id="ritual-display-steps">
                 <li>Prepara un espacio en penumbra y desconecta notificaciones digitales.</li>
@@ -589,7 +591,7 @@
               <blockquote class="font-editorial" style="font-size: 1.2rem; color: var(--color-beige); line-height: 1.6; margin-bottom: 1rem;" id="ritual-display-quote">
                 “No necesitas resolverlo todo en este instante. Solo necesitas respirar y volver a ti.”
               </blockquote>
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--color-gold);">
+              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--color-gold);" data-i18n="ritual_quote_author">
                 — NÜMA FRECUENCIA DEL SER
               </span>
             </div>
@@ -602,16 +604,16 @@
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>COMUNIDAD OFICIAL NÜMA</span>
+                <span data-i18n="ritual_ig_badge">COMUNIDAD OFICIAL NÜMA</span>
               </div>
               <div class="ritual-ig-body">
-                <h5 class="ritual-ig-title">Sintoniza tu ritual en nuestra red</h5>
+                <h5 class="ritual-ig-title" data-i18n="ritual_ig_title">Sintoniza tu ritual en nuestra red</h5>
                 <p class="ritual-ig-desc">
-                  Comparte tu altar sensorial y etiquétanos para formar parte de la sintonía colectiva. Usa la etiqueta:
+                  <span data-i18n="ritual_ig_desc">Comparte tu altar sensorial y etiquétanos para formar parte de la sintonía colectiva. Usa la etiqueta:</span>
                   <strong class="ritual-ig-hashtag" id="ritual-display-ig-tag">#RitualDeCalma #FrecuenciaDelSer</strong>
                 </p>
                 <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" class="ritual-ig-btn">
-                  <span>SEGUIR @frecuencia_numa EN INSTAGRAM</span>
+                  <span data-i18n="btn_follow_ig">SEGUIR @frecuencia_numa EN INSTAGRAM</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
@@ -629,9 +631,9 @@
     <section class="section section-alt" id="numerologia">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Sabiduría Numérica</span>
-          <h2 class="section-title">El Código de tu Esencia</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="num_eyebrow">Sabiduría Numérica</span>
+          <h2 class="section-title" data-i18n="num_title">El Código de tu Esencia</h2>
+          <p class="section-subtitle" data-i18n="num_subtitle">
             Dentro del universo NÜMA, la numerología es una brújula de autodescubrimiento. Los números no determinan tu destino: reflejan el mapa vibracional con el que tu alma decidió experimentar el mundo.
           </p>
         </div>
@@ -639,31 +641,31 @@
         <!-- 4 Tarjetas Conceptuales -->
         <div class="concept-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 4rem;">
           <div class="concept-card">
-            <h3 class="concept-title">CAMINO DE VIDA</h3>
-            <p class="concept-desc">Calculado a partir de tu fecha natal. Indica tu lección central de evolución y tus dones fundamentales.</p>
+            <h3 class="concept-title" data-i18n="num_card_1_title">CAMINO DE VIDA</h3>
+            <p class="concept-desc" data-i18n="num_card_1_desc">Calculado a partir de tu fecha natal. Indica tu lección central de evolución y tus dones fundamentales.</p>
           </div>
           <div class="concept-card">
-            <h3 class="concept-title">NÚMERO DEL ALMA</h3>
-            <p class="concept-desc">Emerge de las vocales de tu nombre. Revela tus deseos más íntimos, aquellos que anhelas en privado.</p>
+            <h3 class="concept-title" data-i18n="num_card_2_title">NÚMERO DEL ALMA</h3>
+            <p class="concept-desc" data-i18n="num_card_2_desc">Emerge de las vocales de tu nombre. Revela tus deseos más íntimos, aquellos que anhelas en privado.</p>
           </div>
           <div class="concept-card">
-            <h3 class="concept-title">NÚMERO DE EXPRESIÓN</h3>
-            <p class="concept-desc">Suma total de tu nombre de nacimiento. Representa los talentos prácticos con los que te manifiestas al mundo.</p>
+            <h3 class="concept-title" data-i18n="num_card_3_title">NÚMERO DE EXPRESIÓN</h3>
+            <p class="concept-desc" data-i18n="num_card_3_desc">Suma total de tu nombre de nacimiento. Representa los talentos prácticos con los que te manifiestas al mundo.</p>
           </div>
           <div class="concept-card">
-            <h3 class="concept-title">AÑO PERSONAL</h3>
-            <p class="concept-desc">Tu ciclo anual individual (del 1 al 9). Guía sabia sobre cuándo sembrar, cosechar o descansar.</p>
+            <h3 class="concept-title" data-i18n="num_card_4_title">AÑO PERSONAL</h3>
+            <p class="concept-desc" data-i18n="num_card_4_desc">Tu ciclo anual individual (del 1 al 9). Guía sabia sobre cuándo sembrar, cosechar o descansar.</p>
           </div>
         </div>
 
         <!-- Calculadora Interactiva NÜMA -->
         <div class="numerology-calc-card">
           <div style="text-align: center; margin-bottom: 2.25rem;">
-            <span class="eyebrow">Herramienta Interactiva</span>
-            <h3 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: var(--color-beige-light); margin-bottom: 0.5rem;">
+            <span class="eyebrow" data-i18n="num_calc_eyebrow">Herramienta Interactiva</span>
+            <h3 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: var(--color-beige-light); margin-bottom: 0.5rem;" data-i18n="num_calc_title">
               Calcula tu Frecuencia NÜMA
             </h3>
-            <p style="font-size: 0.88rem; color: var(--color-text-secondary);">
+            <p style="font-size: 0.88rem; color: var(--color-text-secondary);" data-i18n="num_calc_subtitle">
               Introduce tu fecha de nacimiento para conocer tu Camino de Vida, tu Año Personal y el ritual armonizador recomendado para ti.
             </p>
           </div>
@@ -671,14 +673,14 @@
           <form id="numerology-calc-form">
             <div class="numerology-form-row">
               <div class="form-group" style="margin-bottom: 0;">
-                <label class="form-label" for="num-input-date">Fecha de Nacimiento:</label>
+                <label class="form-label" for="num-input-date" data-i18n="num_lbl_date">Fecha de Nacimiento:</label>
                 <input type="date" id="num-input-date" class="form-control" required>
               </div>
               <div class="form-group" style="margin-bottom: 0;">
-                <label class="form-label" for="num-input-name">Nombre Completo (Opcional):</label>
-                <input type="text" id="num-input-name" class="form-control" placeholder="Ej. Ana Sofía Martínez">
+                <label class="form-label" for="num-input-name" data-i18n="num_lbl_name">Nombre Completo (Opcional):</label>
+                <input type="text" id="num-input-name" class="form-control" data-i18n-placeholder="num_ph_name" placeholder="Ej. Ana Sofía Martínez">
               </div>
-              <button type="submit" class="btn btn-primary btn-gold-shimmer" style="height: 48px;">
+              <button type="submit" class="btn btn-primary btn-gold-shimmer" style="height: 48px;" data-i18n="btn_calc_num">
                 QUIERO CONOCER MI NÚMERO
               </button>
             </div>
@@ -690,7 +692,7 @@
               ?
             </div>
             <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span class="eyebrow" id="num-res-frequency">Frecuencia Vibracional</span>
+              <span class="eyebrow" id="num-res-frequency" data-i18n="num_res_freq_label">Frecuencia Vibracional</span>
               <h4 style="font-family: var(--font-serif-display); font-size: 1.5rem; color: var(--color-beige-light);" id="num-res-title">
                 Arquetipo
               </h4>
@@ -710,11 +712,11 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
               <div style="padding: 1rem; background: #161616; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.3rem;">Ritual NÜMA Sugerido:</span>
+                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.3rem;" data-i18n="num_res_suggested_ritual">Ritual NÜMA Sugerido:</span>
                 <strong style="font-size: 0.88rem; color: var(--color-beige);" id="num-res-ritual">Ritual de Calma</strong>
               </div>
               <div style="padding: 1rem; background: #161616; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
-                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.3rem;">Herramienta & Aroma:</span>
+                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 0.3rem;" data-i18n="num_res_tool_aroma">Herramienta & Aroma:</span>
                 <strong style="font-size: 0.88rem; color: var(--color-beige);" id="num-res-product">Vela Ritual Calma Intensa</strong>
               </div>
             </div>
@@ -724,7 +726,7 @@
                 <span id="num-res-year" style="font-size: 0.85rem; color: var(--color-beige); display: block;"></span>
                 <span id="num-res-soul" style="font-size: 0.82rem; color: var(--color-gold-light); display: none;"></span>
               </div>
-              <button class="btn btn-secondary btn-sm" data-book-service="numerologia-transpersonal">
+              <button class="btn btn-secondary btn-sm" data-book-service="numerologia-transpersonal" data-i18n="btn_book_full_reading">
                 AGENDAR LECTURA COMPLETA
               </button>
             </div>
@@ -737,11 +739,11 @@
     <section class="section" id="cuencos">
       <div class="container">
         <div class="sound-ritual-wrapper">
-          <span class="eyebrow">Terapia Acústica & Resonancia</span>
-          <h2 class="section-title" style="max-width: 780px; margin: 0 auto 1rem;">
+          <span class="eyebrow" data-i18n="sound_eyebrow">Terapia Acústica & Resonancia</span>
+          <h2 class="section-title" style="max-width: 780px; margin: 0 auto 1rem;" data-i18n="sound_title">
             El sonido también puede convertirse en un ritual.
           </h2>
-          <p class="section-subtitle" style="margin-bottom: 2rem;">
+          <p class="section-subtitle" style="margin-bottom: 2rem;" data-i18n="sound_subtitle">
             La sonoterapia es una invitación a la quietud celular. Las ondas sonoras emitidas por los cuencos guían a la mente desde la dispersión hacia una frecuencia de profunda calma física y serenidad interior.
           </p>
 
@@ -749,11 +751,11 @@
           <div style="max-width: 580px; margin: 0 auto; background: rgba(18,18,18,0.75); border: 1px solid var(--color-border-gold); border-radius: var(--radius-md); padding: 1.75rem; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
               <div style="text-align: left;">
-                <span class="eyebrow" style="margin-bottom: 0.2rem; font-size: 0.68rem;">Canción Insignia NÜMA</span>
-                <div style="font-family: var(--font-serif-display); font-size: 1.15rem; color: var(--color-beige-light);">
+                <span class="eyebrow" style="margin-bottom: 0.2rem; font-size: 0.68rem;" data-i18n="sound_track_badge">Canción Insignia NÜMA</span>
+                <div style="font-family: var(--font-serif-display); font-size: 1.15rem; color: var(--color-beige-light);" data-i18n="sound_track_title">
                   Frecuencia del Ser
                 </div>
-                <div style="font-size: 0.75rem; color: var(--color-gold-light);">Composición Original Armonizadora (432 Hz)</div>
+                <div style="font-size: 0.75rem; color: var(--color-gold-light);" data-i18n="sound_track_desc">Composición Original Armonizadora (432 Hz)</div>
               </div>
               <button id="sound-play-btn" class="btn-icon" style="width: 48px; height: 48px; background: var(--gradient-gold); color: #0A0A0A; border: none; box-shadow: 0 0 20px rgba(255,215,0,0.4);" title="Reproducir audio">
                 <!-- Play Icon -->
@@ -796,9 +798,95 @@
           </div>
 
           <div style="margin-top: 2.5rem;">
-            <button class="btn btn-outline" data-book-service="sonoterapia-cuencos">
+            <button class="btn btn-outline" data-book-service="sonoterapia-cuencos" data-i18n="btn_know_sessions">
               CONOCE LAS SESIONES
             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7B. MEDITACIÓN GUIADA NÜMA -->
+    <section class="section" id="meditacion">
+      <div class="container" id="meditacion-guiada-section">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="med_eyebrow">Inmersión Celular & Calma Interior</span>
+          <h2 class="section-title" data-i18n="med_title">Meditación Guiada NÜMA</h2>
+          <p class="section-subtitle" data-i18n="med_subtitle">
+            Pistas compuestas en frecuencias de afinación natural (432 Hz, 528 Hz, 741 Hz) para serenar la mente, reconectar con tu esencia y acompañar tus rituales diarios.
+          </p>
+        </div>
+
+        <div class="meditacion-grid-wrapper">
+          <!-- Reproductor Principal Inmersivo -->
+          <div class="med-main-player" id="med-player-box">
+            <div class="med-player-header">
+              <span class="med-player-badge" id="med-player-badge">Insignia NÜMA</span>
+              <h3 class="med-player-title" id="med-player-title">Retorno al Ser</h3>
+              <div class="med-player-frequency" id="med-player-frequency">432 Hz · Frecuencia Natural</div>
+              <p class="med-player-desc" id="med-player-desc">
+                Una guía inmersiva para serenar el diálogo interno y restablecer la armonía bioenergética.
+              </p>
+            </div>
+
+            <!-- Visualizador de Ondas Sonoras -->
+            <div class="med-visualizer-container" id="med-wave-visualizer">
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+            </div>
+
+            <!-- Barra de Progreso y Tiempo -->
+            <div style="margin-bottom: 0.75rem;">
+              <div id="med-progress-bar" style="width: 100%; height: 6px; background: #222; border-radius: 3px; cursor: pointer; position: relative;">
+                <div id="med-progress-fill" style="width: 0%; height: 100%; background: var(--gradient-gold); border-radius: 3px; transition: width 0.1s linear;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.5rem; font-family: monospace;">
+                <span id="med-time-current">00:00</span>
+                <span id="med-time-total">12:40</span>
+              </div>
+            </div>
+
+            <!-- Controles de Reproducción -->
+            <div class="med-controls-row">
+              <button class="med-btn-nav" id="med-prev-btn" title="Pista anterior" aria-label="Pista anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="4" stroke="currentColor" stroke-width="2"></line></svg>
+              </button>
+
+              <button class="med-btn-circle" id="med-play-btn" title="Reproducir meditación" aria-label="Reproducir meditación">
+                <svg id="med-play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg id="med-pause-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+
+              <button class="med-btn-nav" id="med-next-btn" title="Pista siguiente" aria-label="Pista siguiente">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Lista de Pistas de Meditación Guiada -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+              <h4 style="font-family: var(--font-serif-display); font-size: 1.15rem; color: var(--color-beige-light); margin: 0;" data-i18n="med_playlist_title">
+                Sintonías Sagradas Disponibles
+              </h4>
+              <span style="font-size: 0.72rem; color: var(--color-gold); letter-spacing: 0.1em; text-transform: uppercase;" data-i18n="med_folder_hint">
+                ALTA DEFINICIÓN
+              </span>
+            </div>
+            <div class="med-tracks-container" id="med-tracks-list">
+              <!-- Renderizado dinámicamente desde src/data/meditaciones.js -->
+            </div>
           </div>
         </div>
       </div>
@@ -808,9 +896,9 @@
     <section class="section section-alt" id="journal">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Reflexiones & Sabiduría</span>
-          <h2 class="section-title">JOURNAL NÜMA</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="journal_eyebrow">Reflexiones & Sabiduría</span>
+          <h2 class="section-title" data-i18n="journal_title">JOURNAL NÜMA</h2>
+          <p class="section-subtitle" data-i18n="journal_subtitle">
             Artículos y lecturas conscientes sobre numerología, bienestar sensorial, rituales cotidianos, la memoria de los aromas y el poder sanador del sonido.
           </p>
         </div>
@@ -825,40 +913,40 @@
     <section class="section" id="sobre-numa">
       <div class="container container-narrow">
         <div class="section-header">
-          <span class="eyebrow">Nuestra Historia</span>
-          <h2 class="section-title">La Frecuencia de NÜMA</h2>
+          <span class="eyebrow" data-i18n="story_eyebrow">Nuestra Historia</span>
+          <h2 class="section-title" data-i18n="story_title">La Frecuencia de NÜMA</h2>
         </div>
 
         <div style="font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.85; margin-bottom: 3.5rem;">
-          <p style="margin-bottom: 1.5rem;">
+          <p style="margin-bottom: 1.5rem;" data-i18n="story_p1">
             <strong style="color: var(--color-beige-light); font-family: var(--font-serif-display); font-size: 1.25rem;">NÜMA</strong> nace como una respuesta serena a la aceleración del mundo contemporáneo. En un entorno saturado de ruido y urgencias externas, entendimos que el verdadero lujo no reside en poseer más cosas, sino en la capacidad de detenerse, respirar y reconectar con la esencia propia.
           </p>
-          <p style="margin-bottom: 1.5rem;">
+          <p style="margin-bottom: 1.5rem;" data-i18n="story_p2">
             El concepto de <strong style="color: var(--color-gold);">“Frecuencia del Ser”</strong> representa ese estado íntimo en el que una persona se siente en armonía con su interior. No hablamos de una afirmación médica, sino de una metáfora poética sobre energía, serenidad, presencia y belleza consciente.
           </p>
-          <p>
+          <p data-i18n="story_p3">
             Cada vela vertida a mano, cada barra de jabón botánico, cada lectura numerológica y cada vibración de nuestros cuencos está impregnada de un propósito: convertir un instante ordinario en un ritual sagrado de vuelta a ti.
           </p>
         </div>
 
         <!-- Manifiesto Oficial NÜMA -->
         <div style="background: var(--gradient-card-dark); border: 1px solid var(--color-border-gold); border-radius: var(--radius-lg); padding: 3rem 2.5rem; text-align: center; box-shadow: var(--shadow-gold);">
-          <span class="eyebrow" style="letter-spacing: 0.3em;">MANIFIESTO NÜMA</span>
-          <h3 style="font-family: var(--font-serif-display); font-size: 1.7rem; color: var(--color-beige-light); margin-bottom: 2rem;">
+          <span class="eyebrow" style="letter-spacing: 0.3em;" data-i18n="manifesto_eyebrow">MANIFIESTO NÜMA</span>
+          <h3 style="font-family: var(--font-serif-display); font-size: 1.7rem; color: var(--color-beige-light); margin-bottom: 2rem;" data-i18n="manifesto_title">
             Creemos en los pequeños momentos
           </h3>
 
           <div class="font-editorial" style="font-size: 1.25rem; color: var(--color-beige); line-height: 1.8; margin-bottom: 2.5rem;">
-            <p style="margin-bottom: 1rem;">Creemos que el bienestar también vive en una llama que se enciende.</p>
-            <p style="margin-bottom: 1rem;">En un aroma que nos hace detenernos.</p>
-            <p style="margin-bottom: 1rem;">En un baño sin prisa.</p>
-            <p style="margin-bottom: 1rem;">En el silencio después de un día largo.</p>
-            <p style="margin-bottom: 1.5rem;">En volver a respirar.</p>
-            <p style="color: var(--color-gold-light);">Creemos que no siempre necesitamos escapar. A veces solo necesitamos volver.</p>
-            <p style="color: var(--color-gold);">Volver a nosotros. Volver a nuestra calma. Volver a nuestra esencia.</p>
+            <p style="margin-bottom: 1rem;" data-i18n="manifesto_p1">Creemos que el bienestar también vive en una llama que se enciende.</p>
+            <p style="margin-bottom: 1rem;" data-i18n="manifesto_p2">En un aroma que nos hace detenernos.</p>
+            <p style="margin-bottom: 1rem;" data-i18n="manifesto_p3">En un baño sin prisa.</p>
+            <p style="margin-bottom: 1rem;" data-i18n="manifesto_p4">En el silencio después de un día largo.</p>
+            <p style="margin-bottom: 1.5rem;" data-i18n="manifesto_p5">En volver a respirar.</p>
+            <p style="color: var(--color-gold-light);" data-i18n="manifesto_p6">Creemos que no siempre necesitamos escapar. A veces solo necesitamos volver.</p>
+            <p style="color: var(--color-gold);" data-i18n="manifesto_p7">Volver a nosotros. Volver a nuestra calma. Volver a nuestra esencia.</p>
           </div>
 
-          <div style="font-family: var(--font-serif-display); font-size: 0.95rem; letter-spacing: 0.25em; color: var(--color-gold);">
+          <div style="font-family: var(--font-serif-display); font-size: 0.95rem; letter-spacing: 0.25em; color: var(--color-gold);" data-i18n="manifesto_tagline">
             FLUYE  ·  CONECTA  ·  TRANSFORMA
           </div>
         </div>
@@ -869,9 +957,9 @@
     <section class="section section-alt" id="contacto">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Conexión Directa</span>
-          <h2 class="section-title">¿Listo para volver a ti?</h2>
-          <p class="section-subtitle">
+          <span class="eyebrow" data-i18n="contact_eyebrow">Conexión Directa</span>
+          <h2 class="section-title" data-i18n="contact_title">¿Listo para volver a ti?</h2>
+          <p class="section-subtitle" data-i18n="contact_subtitle">
             Estamos aquí para acompañarte en tu elección de herramientas, resolver tus dudas sobre reservas o preparar un regalo significativo para alguien especial.
           </p>
         </div>
@@ -880,10 +968,10 @@
           <!-- Información y Canales -->
           <div>
             <div style="margin-bottom: 2rem;">
-              <h3 style="font-family: var(--font-serif-display); font-size: 1.3rem; color: var(--color-beige-light); margin-bottom: 0.75rem;">
+              <h3 style="font-family: var(--font-serif-display); font-size: 1.3rem; color: var(--color-beige-light); margin-bottom: 0.75rem;" data-i18n="contact_comm_title">
                 Comunidad & Frecuencia
               </h3>
-              <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.7;">
+              <p style="font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.7;" data-i18n="contact_comm_desc">
                 Síguenos en nuestras redes o escríbenos directamente. Respondemos con cercanía y serenidad a cada mensaje.
               </p>
             </div>
@@ -892,7 +980,7 @@
               <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm); transition: border-color var(--transition-fast);">
                 <span style="color: var(--color-gold); font-size: 1.25rem;">📸</span>
                 <div>
-                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;">Instagram Oficial</strong>
+                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;" data-i18n="contact_ig_label">Instagram Oficial</strong>
                   <span style="font-size: 0.8rem; color: var(--color-gold);">@frecuencia_numa</span>
                 </div>
               </a>
@@ -900,7 +988,7 @@
               <a href="https://wa.me/5218441228140?text=Hola%20NÜMA%20✨%20Quisiera%20más%20información%20sobre..." target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
                 <span style="color: var(--color-gold); font-size: 1.25rem;">💬</span>
                 <div>
-                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;">WhatsApp de Atención</strong>
+                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;" data-i18n="contact_wa_label">WhatsApp de Atención</strong>
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">+52 1 844 122 8140</span>
                 </div>
               </a>
@@ -908,7 +996,7 @@
               <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
                 <span style="color: var(--color-gold); font-size: 1.25rem;">✉️</span>
                 <div>
-                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;">Correo Electrónico</strong>
+                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;" data-i18n="contact_email_label">Correo Electrónico</strong>
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">contacto@numafrecuencia.com</span>
                 </div>
               </div>
@@ -916,8 +1004,8 @@
               <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141414; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
                 <span style="color: var(--color-gold); font-size: 1.25rem;">📍</span>
                 <div>
-                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;">Estudio & Santuario</strong>
-                  <span style="font-size: 0.8rem; color: var(--color-text-muted);">Ciudad de México · Sesiones con cita previa</span>
+                  <strong style="font-size: 0.88rem; color: var(--color-beige); display: block;" data-i18n="contact_studio_label">Estudio & Santuario</strong>
+                  <span style="font-size: 0.8rem; color: var(--color-text-muted);" data-i18n="contact_studio_desc">Ciudad de México · Sesiones con cita previa</span>
                 </div>
               </div>
             </div>
@@ -925,23 +1013,23 @@
 
           <!-- Formulario de Contacto -->
           <div style="background: #141414; border: 1px solid var(--color-border-gold); border-radius: var(--radius-md); padding: 2.5rem;">
-            <h3 style="font-family: var(--font-serif-display); font-size: 1.25rem; color: var(--color-beige-light); margin-bottom: 1.5rem;">
+            <h3 style="font-family: var(--font-serif-display); font-size: 1.25rem; color: var(--color-beige-light); margin-bottom: 1.5rem;" data-i18n="contact_form_title">
               Envíanos un Mensaje
             </h3>
             <form id="contact-form">
               <div class="form-group">
-                <label class="form-label" for="contact-name">Tu Nombre:</label>
-                <input type="text" id="contact-name" class="form-control" placeholder="Ej. Carlos Valenzuela" required>
+                <label class="form-label" for="contact-name" data-i18n="contact_lbl_name">Tu Nombre:</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Ej. Carlos Valenzuela" data-i18n-placeholder="contact_ph_name" required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="contact-email">Correo Electrónico:</label>
+                <label class="form-label" for="contact-email" data-i18n="contact_lbl_email">Correo Electrónico:</label>
                 <input type="email" id="contact-email" class="form-control" placeholder="tu@correo.com" required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="contact-message">¿En qué podemos acompañarte?:</label>
-                <textarea id="contact-message" class="form-control" rows="4" placeholder="Escribe tus preguntas o inquietudes..." required></textarea>
+                <label class="form-label" for="contact-message" data-i18n="contact_lbl_message">¿En qué podemos acompañarte?:</label>
+                <textarea id="contact-message" class="form-control" rows="4" placeholder="Escribe tus preguntas o inquietudes..." data-i18n-placeholder="contact_ph_message" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-gold-shimmer" style="width: 100%; margin-top: 1rem;">
+              <button type="submit" class="btn btn-primary btn-gold-shimmer" style="width: 100%; margin-top: 1rem;" data-i18n="btn_send_wa">
                 ENVIAR POR WHATSAPP
               </button>
             </form>
@@ -961,13 +1049,13 @@
             <img src="./assets/images/numa_logo_circle.png" style="width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--color-gold);">
             <div>
               <span class="brand-name" style="font-size: 1.3rem;">NÜMA</span>
-              <div class="brand-desc" style="font-size: 0.55rem;">FRECUENCIA DEL SER</div>
+              <div class="brand-desc" style="font-size: 0.55rem;" data-i18n="brand_subtitle">FRECUENCIA DEL SER</div>
             </div>
           </div>
-          <p class="font-editorial" style="font-size: 1.05rem; color: var(--color-gold-light); margin-bottom: 1rem;">
+          <p class="font-editorial" style="font-size: 1.05rem; color: var(--color-gold-light); margin-bottom: 1rem;" data-i18n="about_title">
             “Más que una marca. Una frecuencia.”
           </p>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.6; max-width: 320px;">
+          <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.6; max-width: 320px;" data-i18n="hero_lead">
             Acompañamos procesos de introspección y bienestar sensorial mediante velas de soya, aromas puros, numerología y sonoterapia.
           </p>
           <div class="footer-social-row">
@@ -988,34 +1076,35 @@
 
         <!-- Columna 2: Explorar -->
         <div>
-          <h4 class="footer-col-title">Explorar</h4>
+          <h4 class="footer-col-title" data-i18n="footer_col_explore">Explorar</h4>
           <ul class="footer-links-list">
-            <li><a href="#tienda">Tienda NÜMA</a></li>
-            <li><a href="#experiencias">Experiencias</a></li>
-            <li><a href="#rituales">Rituales Guiados</a></li>
-            <li><a href="#numerologia">Numerología</a></li>
-            <li><a href="#cuencos">Cuencos & Sonido</a></li>
-            <li><a href="#journal">Journal NÜMA</a></li>
-            <li><a href="#sobre-numa">Sobre Nosotros</a></li>
+            <li><a href="#tienda" data-i18n="nav_shop">Tienda NÜMA</a></li>
+            <li><a href="#experiencias" data-i18n="nav_experiences">Experiencias</a></li>
+            <li><a href="#rituales" data-i18n="nav_rituals">Rituales Guiados</a></li>
+            <li><a href="#numerologia" data-i18n="nav_numerology">Numerología</a></li>
+            <li><a href="#cuencos" data-i18n="nav_sound">Cuencos & Sonido</a></li>
+            <li><a href="#meditacion" data-i18n="nav_meditation">Meditación Guiada</a></li>
+            <li><a href="#journal" data-i18n="nav_journal">Journal NÜMA</a></li>
+            <li><a href="#sobre-numa" data-i18n="nav_contact">Sobre Nosotros</a></li>
           </ul>
         </div>
 
         <!-- Columna 3: Atención -->
         <div>
-          <h4 class="footer-col-title">Atención</h4>
+          <h4 class="footer-col-title" data-i18n="footer_col_support">Atención</h4>
           <ul class="footer-links-list">
-            <li><a href="#contacto">Contacto Directo</a></li>
-            <li><a href="#" onclick="alert('Políticas de Envío: Envíos asegurados a todo México en 2 a 5 días hábiles con paquetería express. Envío gratis a partir de $1,200 MXN.'); return false;">Políticas de Envío</a></li>
-            <li><a href="#" onclick="alert('Cambios y Devoluciones: Tienes hasta 15 días tras recibir tu producto para solicitar cambio o devolución en caso de defecto o inconformidad.'); return false;">Cambios y Devoluciones</a></li>
-            <li><a href="#" onclick="alert('Preguntas Frecuentes: Todas nuestras velas son 100% vegetales, libres de parafina tóxica y vertidas a mano artesanalmente en México.'); return false;">Preguntas Frecuentes</a></li>
-            <li><a href="https://wa.me/5218441228140" target="_blank">Atención por WhatsApp</a></li>
+            <li><a href="#contacto" data-i18n="contact_title">Contacto Directo</a></li>
+            <li><a href="#" onclick="alert('Políticas de Envío: Envíos asegurados a todo México en 2 a 5 días hábiles con paquetería express. Envío gratis a partir de $1,200 MXN.'); return false;" data-i18n="footer_shipping">Políticas de Envío</a></li>
+            <li><a href="#" onclick="alert('Cambios y Devoluciones: Tienes hasta 15 días tras recibir tu producto para solicitar cambio o devolución en caso de defecto o inconformidad.'); return false;" data-i18n="footer_returns">Cambios y Devoluciones</a></li>
+            <li><a href="#" onclick="alert('Preguntas Frecuentes: Todas nuestras velas son 100% vegetales, libres de parafina tóxica y vertidas a mano artesanalmente en México.'); return false;" data-i18n="footer_faq">Preguntas Frecuentes</a></li>
+            <li><a href="https://wa.me/5218441228140" target="_blank" data-i18n="footer_wa">Atención por WhatsApp</a></li>
           </ul>
         </div>
 
         <!-- Columna 4: Legal & Comunidad -->
         <div>
-          <h4 class="footer-col-title">Comunidad</h4>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6;">
+          <h4 class="footer-col-title" data-i18n="footer_col_community">Comunidad</h4>
+          <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6;" data-i18n="footer_community_desc">
             Únete a nuestra sintonía compartiendo tus rituales en Instagram con la etiqueta:
           </p>
           <a href="https://www.instagram.com/frecuencia_numa/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-serif-display); color: var(--color-gold); font-size: 1rem; margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none;">
@@ -1023,8 +1112,8 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
           <ul class="footer-links-list">
-            <li><a href="#" onclick="alert('Aviso de Privacidad: NÜMA protege tus datos personales conforme a la legislación mexicana. No compartimos información con terceros.'); return false;">Aviso de Privacidad</a></li>
-            <li><a href="#" onclick="alert('Términos y Condiciones: La información y rituales ofrecidos por NÜMA tienen fines de bienestar y relajación. No sustituyen atención médica o psicológica.'); return false;">Términos y Condiciones</a></li>
+            <li><a href="#" onclick="alert('Aviso de Privacidad: NÜMA protege tus datos personales conforme a la legislación mexicana. No compartimos información con terceros.'); return false;" data-i18n="footer_privacy">Aviso de Privacidad</a></li>
+            <li><a href="#" onclick="alert('Términos y Condiciones: La información y rituales ofrecidos por NÜMA tienen fines de bienestar y relajación. No sustituyen atención médica o psicológica.'); return false;" data-i18n="footer_terms">Términos y Condiciones</a></li>
           </ul>
         </div>
       </div>
@@ -1033,9 +1122,9 @@
       <div class="footer-dedication">
         <div class="dedication-symbol">✦</div>
         <p class="dedication-text">
-          Hecho con cariño por <strong>Sergio</strong>, para alguien especial.
+          <span data-i18n="footer_dedication_lead">Hecho con cariño por</span> <strong data-i18n="footer_dedication_name">Sergio</strong><span data-i18n="footer_dedication_tail">, para alguien especial.</span>
         </p>
-        <p class="dedication-subtext">
+        <p class="dedication-subtext" data-i18n="footer_dedication_sub">
           Que esta pequeña experiencia te recuerde lo importante que eres.
         </p>
         <div class="dedication-signature">
@@ -1044,10 +1133,10 @@
       </div>
 
       <div class="footer-bottom">
-        <div>
+        <div data-i18n="footer_rights">
           © 2026 NÜMA — Frecuencia del Ser. Todos los derechos reservados.
         </div>
-        <div style="color: var(--color-gold);">
+        <div style="color: var(--color-gold);" data-i18n="manifesto_tagline">
           Fluye · Conecta · Transforma
         </div>
       </div>
@@ -1059,13 +1148,13 @@
   <!-- DRAWER DEL CARRITO -->
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer-header">
-      <h3 class="cart-drawer-title">Tus Rituales</h3>
+      <h3 class="cart-drawer-title" data-i18n="cart_title">Tus Rituales</h3>
       <button class="modal-close-btn" id="cart-close-btn">&times;</button>
     </div>
 
     <!-- Barra de Envío Gratis -->
     <div class="cart-shipping-bar-box">
-      <div class="shipping-bar-text" id="cart-shipping-msg">
+      <div class="shipping-bar-text" id="cart-shipping-msg" data-i18n="cart_free_shipping_notice">
         Envío gratis a partir de $1,200 MXN
       </div>
       <div class="shipping-progress-track">
@@ -1081,29 +1170,29 @@
     <!-- Footer del Carrito -->
     <div class="cart-drawer-footer">
       <div class="cart-coupon-box">
-        <input type="text" id="cart-coupon-input" class="form-control" placeholder="Código de descuento" style="padding: 0.6rem 0.9rem; font-size: 0.8rem;">
-        <button id="cart-coupon-btn" class="btn btn-secondary btn-sm">APLICAR</button>
+        <input type="text" id="cart-coupon-input" class="form-control" placeholder="Código de descuento" data-i18n-placeholder="cart_coupon_ph" style="padding: 0.6rem 0.9rem; font-size: 0.8rem;">
+        <button id="cart-coupon-btn" class="btn btn-secondary btn-sm" data-i18n="cart_coupon_btn">APLICAR</button>
       </div>
       <div id="cart-coupon-msg" style="font-size: 0.75rem; margin-bottom: 0.75rem; display: none;"></div>
 
       <div class="cart-totals-row">
-        <span>Subtotal</span>
+        <span data-i18n="cart_subtotal">Subtotal</span>
         <span id="cart-subtotal-val">$0 MXN</span>
       </div>
       <div class="cart-totals-row" id="cart-discount-row" style="display: none; color: var(--color-gold);">
-        <span>Descuento</span>
+        <span data-i18n="cart_discount">Descuento</span>
         <span id="cart-discount-val">-$0 MXN</span>
       </div>
       <div class="cart-totals-row">
-        <span>Envío estimado</span>
+        <span data-i18n="cart_shipping_est">Envío estimado</span>
         <span id="cart-shipping-val">$0 MXN</span>
       </div>
       <div class="cart-totals-row cart-total-final">
-        <span>Total</span>
+        <span data-i18n="cart_total_lbl">Total</span>
         <span id="cart-total-val">$0 MXN</span>
       </div>
 
-      <button id="cart-checkout-btn" class="btn btn-primary btn-gold-shimmer" style="width: 100%;">
+      <button id="cart-checkout-btn" class="btn btn-primary btn-gold-shimmer" style="width: 100%;" data-i18n="cart_checkout_btn">
         FINALIZAR COMPRA
       </button>
     </div>

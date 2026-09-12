@@ -51,5 +51,20 @@ assert(resGifts.products.some(p => p.category === 'kits' || p.badge.includes('Re
 const resHello = processBotQuery('Hola');
 assert(resHello.text.includes('Oráculo de NÜMA'), 'Debe saludar amablemente como el Oráculo de NÜMA');
 
+// 9. Prueba de consulta: ¿Cómo saber mi número según mi fecha de nacimiento?
+const resHowToNum = processBotQuery('¿Cuál es mi número? depende de la fecha de nacimiento');
+assert(resHowToNum.text.includes('¿Cómo saber tu Número según tu Fecha de Nacimiento?'), 'Debe responder didácticamente cómo saber el número por fecha de nacimiento');
+assert(resHowToNum.text.includes('La Fórmula Sagrada'), 'Debe incluir la fórmula de suma y reducción');
+
+// 10. Prueba de información básica sobre numerología
+const resBasicNum = processBotQuery('Dame información básica sobre numerología');
+assert(resBasicNum.text.includes('Información Básica sobre la Numerología en NÜMA'), 'Debe proveer información básica sobre numerología');
+assert(resBasicNum.text.includes('Camino de Vida') && resBasicNum.text.includes('Número del Alma'), 'Debe explicar las 4 coordenadas numerológicas');
+
+// 11. Prueba de Meditaciones Guiadas y música
+const resMed = processBotQuery('¿Tienen canciones o meditaciones guiadas?');
+assert(resMed.text.includes('Zona de Meditación Guiada NÜMA'), 'Debe informar sobre la zona de meditación guiada');
+
 console.log(`\nResumen: ${passed} pruebas superadas, ${failed} fallos.`);
 if (failed > 0) process.exit(1);
+

@@ -262,6 +262,77 @@ ${arch.recommendedProduct} para acompañar el *${arch.recommendedRitual}*.`,
     }
   }
 
+  // 2B. GUÍA BÁSICA: ¿CUÁL ES MI NÚMERO SEGÚN MI FECHA DE NACIMIENTO? / ¿CÓMO SE CALCULA?
+  const isAskingHowToFindNumber = 
+    norm.includes('cual es mi numero') || 
+    norm.includes('como saber mi numero') || 
+    norm.includes('como calculo mi numero') || 
+    norm.includes('como calcular mi numero') || 
+    norm.includes('depende de la fecha') || 
+    norm.includes('segun mi fecha') || 
+    norm.includes('saber mi numero') ||
+    norm.includes('como saco mi numero');
+
+  if (isAskingHowToFindNumber) {
+    return {
+      text: `🔢 **¿Cómo saber tu Número según tu Fecha de Nacimiento?**
+
+En la numerología pitagórica de NÜMA, tu número principal se llama **Camino de Vida** (*Life Path*) y define el mapa vibracional con el que tu alma decidió experimentar el mundo:
+
+✨ **La Fórmula Sagrada:**
+Se suman **todos los dígitos** de tu fecha natal (Día + Mes + Año) y se reducen sucesivamente hasta obtener un solo dígito del **1 al 9** (a excepción de los números maestros **11, 22 y 33**, que no se reducen).
+
+🌿 **Ejemplo práctico:**
+Si naciste el **15 de Julio de 1993**:
+1. Día: 1 + 5 = **6**
+2. Mes: 0 + 7 = **7**
+3. Año: 1 + 9 + 9 + 3 = 22 → 2 + 2 = **4**
+4. Suma total: 6 + 7 + 4 = **17** → 1 + 7 = **8** *(Arquetipo: La Conquista Material y el Poder Creador)*.
+
+💬 **¡Pruébalo ahora mismo!**
+Escríbeme tu fecha de nacimiento (por ejemplo: *"Nací el 24/09/1988"* o *"15 de julio de 1993"*) y yo haré el cálculo instantáneo, revelándote tu arquetipo y las herramientas NÜMA afines a tu vibración.`,
+      products: [PRODUCTS[1], PRODUCTS[0]],
+      quickReplies: [
+        'Nací el 15/07/1993',
+        'Nací el 08/11/1986',
+        '¿Qué es la numerología?',
+        '¿Qué son los Números Maestros?'
+      ]
+    };
+  }
+
+  // 2C. INFORMACIÓN BÁSICA SOBRE NUMEROLOGÍA
+  const isAskingBasicNumerology = 
+    norm.includes('informacion sobre numerologia') || 
+    norm.includes('informacion basica') || 
+    norm.includes('que es la numerologia') || 
+    norm.includes('explicame numerologia') ||
+    norm.includes('como funciona la numerologia');
+
+  if (isAskingBasicNumerology) {
+    return {
+      text: `📜 **Información Básica sobre la Numerología en NÜMA**
+
+La numerología no es adivinación ni determinismo estricto: es una **brújula de autoconocimiento** ancestral fundada en la premisa pitagórica de que el universo entero se organiza mediante patrones de frecuencia y vibración armónica.
+
+Dentro de NÜMA exploramos 4 coordenadas esenciales de tu mapa energético:
+
+1. 🧭 **Camino de Vida:** Calculado a partir de tu **fecha completa de nacimiento**. Representa el aprendizaje primario, talentos innatos y lección evolutiva de tu existencia.
+2. 💖 **Número del Alma:** Surge de las **vocales de tu nombre de nacimiento**. Describe tus deseos íntimos, lo que anhela tu corazón en silencio.
+3. 🎭 **Número de Expresión:** Suma total de **todas las letras de tu nombre**. Muestra las aptitudes prácticas con las que te manifiestas al exterior.
+4. 🗓️ **Año Personal:** Ciclo anual individual de 9 fases que te indica en qué etapa estás (iniciar, gestar, florecer, cosechar o descansar).
+
+¿Deseas calcular tu **Camino de Vida** compartiéndome tu fecha de nacimiento?`,
+      products: [PRODUCTS[1], PRODUCTS[6]],
+      quickReplies: [
+        '¿Cuál es mi número según mi fecha?',
+        'Nací el 12/04/1995',
+        '¿Qué significa el número 11?',
+        'Ver herramientas y velas'
+      ]
+    };
+  }
+
   // 3. CONCEPTOS FUNDAMENTALES DE NUMEROLOGÍA
   if (norm.includes('camino de vida') || norm.includes('sendero')) {
     const concept = NUMEROLOGY_CONCEPTS.find(c => c.id === 'camino-de-vida');
@@ -429,7 +500,30 @@ Para despejar la niebla matutina y conectar con tu poder creador, nuestra sinerg
     };
   }
 
-  // Meditación / Espiritualidad / Conexión
+  // Meditación Guiada & Música / Pistas
+  if (norm.includes('meditacion guiada') || norm.includes('meditaciones guiadas') || norm.includes('cancion') || norm.includes('canciones') || norm.includes('musica') || norm.includes('pista') || norm.includes('audio')) {
+    return {
+      text: `🧘 **Zona de Meditación Guiada NÜMA**
+
+Hemos creado una sección especial con pistas de meditación compuestas en frecuencias de afinación natural para acompañar tu descanso y tus rituales:
+
+• **Retorno al Ser (432 Hz):** Reconexión con el centro sagrado y calma mental.
+• **Apertura del Chakra Corazón (528 Hz):** Amor propio, perdón y reconciliación íntima.
+• **Claridad & Propósito (741 Hz):** Sintonía con tu número sagrado e intuición.
+• **Quietud Nocturna (396 Hz):** Sueño profundo y disolución de sobrecargas.
+
+Puedes escucharlas de forma gratuita en la sección **Meditación Guiada NÜMA** en nuestra página web.`,
+      products: [PRODUCTS[0], PRODUCTS[1], PRODUCTS[4]],
+      quickReplies: [
+        '¿Cuál es mi número según mi fecha?',
+        'Vela Ritual Calma Intensa',
+        'Bruma Áurica Frecuencia NÜMA',
+        'Ver todas las velas'
+      ]
+    };
+  }
+
+  // Meditación / Espiritualidad / Conexión (Aromas y Velas)
   if (norm.includes('meditar') || norm.includes('meditacion') || norm.includes('ritual') || norm.includes('espiritual') || norm.includes('presencia') || norm.includes('cuencos')) {
     const spiritProds = PRODUCTS.filter(p =>
       p.id === 'vela-frecuencia-dorada' ||
@@ -466,6 +560,8 @@ Regalar NÜMA es ofrecer un ancla de presencia y paz. Cada cofre viene en empaqu
       ]
     };
   }
+
+
 
   // 6. BÚSQUEDA GENERAL DE PRODUCTOS EN EL CATÁLOGO (Por nombre, aroma o categoría)
   const matched = searchProducts(raw);
@@ -544,6 +640,8 @@ Puedes activar la sintonización auditiva en el reproductor inferior izquierdo p
       ]
     };
   }
+
+
 
   if (norm.includes('hola') || norm.includes('buen') || norm.includes('saludos') || norm.includes('namaste') || norm.includes('inicio')) {
     return {

@@ -1,126 +1,114 @@
 /**
- * Rastreador de Cursor Numerológico NÜMA (Sacred Numbers Trail)
- * Genera una estela etérea de números sagrados (1-9, 11, 22, 33, 432)
- * al mover el cursor por la pantalla, con 60fps fluidos y cero reflows en el DOM.
+ * Cursor de Simbología Sagrada NÜMA (Sacred Numerology Cursor)
+ * Reemplaza el cursor estándar por un símbolo místico de la numerología
+ * (Estrella Pitagórica de 8 Puntas / Geometría Sagrada) con halo de luz dorada
+ * y micro-reacciones magnéticas al interactuar con elementos clicables.
  */
 
 export function initNumerologyCursor() {
-  // Evitar duplicados
-  if (document.getElementById('numa-cursor-canvas')) return;
+  // Desactivar en pantallas puramente táctiles (móviles/tablets) para preservar experiencia nativa
+  if (window.matchMedia('(pointer: coarse)').matches) return;
 
-  const canvas = document.createElement('canvas');
-  canvas.id = 'numa-cursor-canvas';
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100vw';
-  canvas.style.height = '100vh';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '9998';
-  document.body.appendChild(canvas);
+  // Limpiar cualquier canvas o cursor previo
+  const oldCanvas = document.getElementById('numa-cursor-canvas');
+  if (oldCanvas) oldCanvas.remove();
 
-  const ctx = canvas.getContext('2d', { alpha: true });
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
+  const oldCursor = document.getElementById('numa-sacred-cursor');
+  if (oldCursor) oldCursor.remove();
 
-  // Lista de números sagrados para la estela
-  const SACRED_NUMBERS = ['3', '7', '11', '1', '9', '22', '5', '8', '33', '4', '2', '6', '432'];
-  let numberIndex = 0;
+  // Crear elemento del cursor sagrado
+  const cursorWrap = document.createElement('div');
+  cursorWrap.id = 'numa-sacred-cursor';
+  cursorWrap.className = 'numa-sacred-cursor';
+  cursorWrap.innerHTML = `
+    <div class="sacred-cursor-symbol">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Resplandor exterior -->
+        <circle cx="16" cy="16" r="14" stroke="rgba(255, 215, 0, 0.2)" stroke-width="1" stroke-dasharray="2 3" />
+        <!-- Cuadrado 1 de la estrella de 8 puntas (Merkaba / Geometría 8) -->
+        <rect x="7.5" y="7.5" width="17" height="17" stroke="#FFD700" stroke-width="1.2" fill="none" opacity="0.85" />
+        <!-- Cuadrado 2 rotado 45° -->
+        <rect x="7.5" y="7.5" width="17" height="17" stroke="#FFE57F" stroke-width="1.2" fill="rgba(255, 215, 0, 0.08)" transform="rotate(45 16 16)" />
+        <!-- Punto Central de Conciencia (Mónada / Origen) -->
+        <circle cx="16" cy="16" r="2.2" fill="#FFD700" />
+      </svg>
+    </div>
+    <div class="sacred-cursor-aura"></div>
+  `;
 
-  let activeParticles = [];
-  let lastPos = { x: -1000, y: -1000 };
-  let isRunning = false;
-  let rafId = null;
-  const MIN_DISTANCE = 32; // Distancia mínima en píxeles antes de spawnear el siguiente número
+  document.body.appendChild(cursorWrap);
+  document.body.classList.add('numa-has-custom-cursor');
 
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+  let mouseX = -100;
+  let mouseY = -100;
+  let cursorX = -100;
+  let cursorY = -100;
+  let rotation = 0;
+  let isHovering = false;
+  let isClicking = false;
+
+  function onMouseMove(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   }
 
-  function spawnNumber(x, y) {
-    const char = SACRED_NUMBERS[numberIndex % SACRED_NUMBERS.length];
-    numberIndex++;
+  function onMouseDown() {
+    isClicking = true;
+    cursorWrap.classList.add('clicking');
+  }
 
-    // Detección de tema claro vs oscuro para el contraste óptimo del dorado
-    const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
-    const goldColor = isLightTheme ? '184, 134, 11' : '255, 215, 0';
+  function onMouseUp() {
+    isClicking = false;
+    cursorWrap.classList.remove('clicking');
+  }
 
-    activeParticles.push({
-      x: x + (Math.random() - 0.5) * 8,
-      y: y + (Math.random() - 0.5) * 8,
-      char,
-      size: Math.floor(Math.random() * 5) + 14, // 14px a 18px
-      alpha: 0.95,
-      decay: Math.random() * 0.015 + 0.018, // Desvanecimiento suave en ~40-50 frames
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: -(Math.random() * 0.6 + 0.3), // Flotación ascendente etérea
-      scale: 0.85,
-      maxScale: 1.08,
-      goldColor
+  function updateHoverListeners() {
+    const interactives = document.querySelectorAll('a, button, input, select, textarea, [role="button"], .category-filter-btn, .product-card, .btn-icon');
+    interactives.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        isHovering = true;
+        cursorWrap.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        isHovering = false;
+        cursorWrap.classList.remove('hovering');
+      });
     });
-
-    if (!isRunning) {
-      isRunning = true;
-      render();
-    }
   }
 
-  function render() {
-    ctx.clearRect(0, 0, width, height);
+  // Animación continua con interpolación suave (lerp)
+  function animate() {
+    const dx = mouseX - cursorX;
+    const dy = mouseY - cursorY;
 
-    for (let i = activeParticles.length - 1; i >= 0; i--) {
-      const p = activeParticles[i];
-      p.x += p.vx;
-      p.y += p.vy;
-      p.alpha -= p.decay;
-      if (p.scale < p.maxScale) p.scale += 0.01;
+    cursorX += dx * 0.22;
+    cursorY += dy * 0.22;
 
-      if (p.alpha <= 0.01) {
-        activeParticles.splice(i, 1);
-        continue;
-      }
+    // Rotación sutil proporcional a la velocidad del movimiento
+    const speed = Math.sqrt(dx * dx + dy * dy);
+    rotation += speed * 0.08;
 
-      ctx.save();
-      ctx.font = `600 ${p.size * p.scale}px 'Cinzel', 'Playfair Display', Georgia, serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = `rgba(${p.goldColor}, ${Math.max(0, p.alpha)})`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = `rgba(${p.goldColor}, ${p.alpha * 0.7})`;
-      ctx.fillText(p.char, p.x, p.y);
-      ctx.restore();
+    cursorWrap.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+
+    const symbolEl = cursorWrap.querySelector('.sacred-cursor-symbol');
+    if (symbolEl) {
+      symbolEl.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
     }
 
-    if (activeParticles.length > 0) {
-      rafId = requestAnimationFrame(render);
-    } else {
-      isRunning = false;
-      ctx.clearRect(0, 0, width, height);
-    }
+    requestAnimationFrame(animate);
   }
 
-  function handlePointerMove(e) {
-    const x = e.clientX;
-    const y = e.clientY;
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('mousedown', onMouseDown);
+  window.addEventListener('mouseup', onMouseUp);
 
-    const dx = x - lastPos.x;
-    const dy = y - lastPos.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
+  updateHoverListeners();
 
-    if (dist >= MIN_DISTANCE) {
-      spawnNumber(x, y);
-      lastPos = { x, y };
-    }
-  }
+  // Observar inserciones dinámicas en el DOM para actualizar los elementos interactivos
+  const observer = new MutationObserver(() => {
+    updateHoverListeners();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 
-  window.addEventListener('resize', resize);
-  window.addEventListener('pointermove', handlePointerMove, { passive: true });
-
-  return () => {
-    window.removeEventListener('resize', resize);
-    window.removeEventListener('pointermove', handlePointerMove);
-    if (rafId) cancelAnimationFrame(rafId);
-    canvas.remove();
-  };
+  animate();
 }

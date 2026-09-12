@@ -786,4 +786,349 @@
   display: none;
 }
 
+/* ==========================================================================
+   CURSOR DE SIMBOLOGÍA SAGRADA NÜMA (GEOMETRÍA PITAGÓRICA)
+   ========================================================================== */
+@media (pointer: fine) {
+  body.numa-has-custom-cursor {
+    cursor: none;
+  }
+  body.numa-has-custom-cursor a,
+  body.numa-has-custom-cursor button,
+  body.numa-has-custom-cursor input,
+  body.numa-has-custom-cursor select,
+  body.numa-has-custom-cursor textarea,
+  body.numa-has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+.numa-sacred-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: normal;
+}
+
+.sacred-cursor-symbol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.65));
+  transition: transform 0.08s linear, filter 0.25s ease;
+}
+
+.sacred-cursor-aura {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 70%);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Estado Hover sobre botones / enlaces */
+.numa-sacred-cursor.hovering .sacred-cursor-symbol {
+  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.95));
+}
+
+.numa-sacred-cursor.hovering .sacred-cursor-aura {
+  transform: translate(-50%, -50%) scale(1.6);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.35) 0%, rgba(255, 215, 0, 0.05) 65%, transparent 80%);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+/* Estado Clic */
+.numa-sacred-cursor.clicking .sacred-cursor-aura {
+  transform: translate(-50%, -50%) scale(0.85);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, transparent 70%);
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .numa-sacred-cursor {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   ZONA: MEDITACIÓN GUIADA NÜMA
+   ========================================================================== */
+.meditacion-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .meditacion-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Reproductor Principal */
+.med-main-player {
+  background: var(--gradient-card-dark);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-gold);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+
+.med-main-player::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.med-player-header {
+  margin-bottom: 1.75rem;
+}
+
+.med-player-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--color-gold-light);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.med-player-title {
+  font-family: var(--font-serif-display);
+  font-size: 2rem;
+  color: var(--color-beige-light);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.med-player-frequency {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.med-player-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+/* Visualizador de Ondas */
+.med-visualizer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+
+.med-visualizer-container .wave-bar {
+  width: 4px;
+  height: 12px;
+  background: var(--gradient-gold);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.med-visualizer-container .wave-bar.animating {
+  animation: soundWavePulse 1.2s infinite ease-in-out;
+}
+
+.med-visualizer-container .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+.med-visualizer-container .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+.med-visualizer-container .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+.med-visualizer-container .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+.med-visualizer-container .wave-bar:nth-child(6) { animation-delay: 0.75s; }
+.med-visualizer-container .wave-bar:nth-child(7) { animation-delay: 0.9s; }
+.med-visualizer-container .wave-bar:nth-child(8) { animation-delay: 1.05s; }
+
+/* Controles */
+.med-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.med-btn-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  color: #0A0A0A;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.med-btn-circle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.6);
+}
+
+.med-btn-nav {
+  background: transparent;
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-beige-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.med-btn-nav:hover {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: var(--color-gold);
+}
+
+/* Lista de Pistas */
+.med-tracks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  overflow-y: auto;
+  max-height: 540px;
+  padding-right: 0.4rem;
+}
+
+.med-track-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.med-track-card:hover {
+  border-color: var(--color-border-gold);
+  background: rgba(26, 26, 26, 0.95);
+  transform: translateX(4px);
+}
+
+.med-track-card.active {
+  border-color: var(--color-gold);
+  background: rgba(255, 215, 0, 0.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+.track-play-indicator {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.med-track-card.active .track-play-indicator {
+  background: var(--gradient-gold);
+  color: #0A0A0A;
+}
+
+.track-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.track-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.track-frequency-badge {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+}
+
+.track-title {
+  font-family: var(--font-serif-display);
+  font-size: 1.05rem;
+  color: var(--color-beige-light);
+  margin: 0 0 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-intention {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.track-duration {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
 

@@ -17,6 +17,7 @@ import { themeEngine } from './themeEngine.js';
 import { i18n } from '../i18n/i18nEngine.js';
 import { NumaBotWidget } from './numaBotWidget.js';
 import { initNumerologyCursor } from './numerologyCursor.js';
+import { initMeditacionGuiada } from './meditacionGuiada.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Inicializar Motor de Tema (Claro/Oscuro) y Sistema i18n
@@ -35,8 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles('particles-canvas');
   initNumerologyCursor();
 
-  // 2. Inicializar Audio de Cuencos & Canción Frecuencia del Ser
+  // 2. Inicializar Audio de Cuencos, Canción Frecuencia del Ser & Meditaciones Guiadas
   initSoundPlayer();
+  initMeditacionGuiada();
 
 
   // 3. Inicializar Modales
@@ -130,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
           <div class="product-quickview-overlay">
             <button class="btn btn-secondary btn-sm btn-quickview-trigger" data-id="${p.id}">
-              VISTA RÁPIDA
+              ${i18n.t('btn_quick_view', 'VISTA RÁPIDA')}
             </button>
           </div>
         </div>
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
               ${p.originalPrice ? `<span class="product-price-old">$${p.originalPrice.toLocaleString('es-MX')}</span>` : ''}
             </div>
             <button class="btn btn-primary btn-sm btn-add-cart" data-id="${p.id}">
-              AGREGAR
+              ${i18n.t('btn_add_cart', 'AGREGAR')}
             </button>
           </div>
         </div>
@@ -189,6 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   renderProducts();
+
+  // Re-render dinámico de productos y componentes dependientes al cambiar idioma
+  i18n.onLanguageChange(() => {
+    renderProducts();
+  });
 
   // 7. Sección de Rituales Interactivos
   const ritualTabs = document.querySelectorAll('.ritual-tab-btn');
