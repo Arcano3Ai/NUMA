@@ -162,7 +162,8 @@ export const TRANSLATIONS = {
     btn_know_sessions: 'CONOCE LAS SESIONES',
 
     // Meditación Guiada
-    nav_meditation: 'MEDITACIÓN',
+    nav_meditation: 'MEDITACIÓN GUIADA',
+    btn_meditation_cta: '✦ MEDITACIÓN GUIADA',
     med_eyebrow: 'Inmersión Celular & Calma Interior',
     med_title: 'Meditación Guiada NÜMA',
     med_subtitle: 'Pistas compuestas en frecuencias de afinación natural (432 Hz, 528 Hz, 741 Hz) para serenar la mente, reconectar con tu esencia y acompañar tus rituales diarios.',
@@ -402,7 +403,8 @@ export const TRANSLATIONS = {
     btn_know_sessions: 'EXPLORE SESSIONS',
 
     // Guided Meditation
-    nav_meditation: 'MEDITATION',
+    nav_meditation: 'GUIDED MEDITATION',
+    btn_meditation_cta: '✦ GUIDED MEDITATION',
     med_eyebrow: 'Cellular Immersion & Inner Stillness',
     med_title: 'NÜMA Guided Meditation',
     med_subtitle: 'Tracks composed in natural tuning frequencies (432 Hz, 528 Hz, 741 Hz) to calm the mind, reconnect with your essence, and accompany your daily rituals.',
